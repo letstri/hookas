@@ -9,6 +9,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 ### Hooks
 
 - [useIsOnline](#useisonline)
+- [useAsyncEffect](#useasynceffect)
 
 #### useIsOnline
 
@@ -24,4 +25,45 @@ const isOnline = useIsOnline();
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-is-online.json
+```
+
+#### useAsyncEffect
+
+Run an async effect.
+
+##### Usage
+
+```tsx
+useAsyncEffect(async () => {
+  const res = await fetch("https://api.example.com/data");
+  const data = await res.json();
+  console.log(data);
+}, []);
+```
+
+##### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-async-effect.json
+```
+
+#### useElementSize
+
+Measure the size of an element.
+
+##### Usage
+
+```tsx
+const [ref, { width, height }] = useElementSize();
+
+<div ref={ref}>
+  <p>Width: {width}</p>
+  <p>Height: {height}</p>
+</div>;
+```
+
+##### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-element-size.json
 ```

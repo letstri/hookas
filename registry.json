@@ -15,6 +15,32 @@
           "target": "hookas/use-is-online.ts"
         }
       ]
+    },
+    {
+      "name": "use-async-effect",
+      "type": "registry:hook",
+      "title": "useAsyncEffect",
+      "description": "A hook to run an async effect",
+      "files": [
+        {
+          "path": "registry/hooks/use-async-effect.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-async-effect.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-element-size",
+      "type": "registry:hook",
+      "title": "useElementSize",
+      "description": "A hook to measure the size of an element",
+      "files": [
+        {
+          "path": "registry/hooks/use-element-size.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-element-size.ts"
+        }
+      ]
     }
   ]
 }

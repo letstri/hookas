@@ -12,7 +12,7 @@
         {
           "path": "registry/hooks/use-is-online.ts",
           "type": "registry:hook",
-          "target": "hookas/use-is-online"
+          "target": "hookas/use-is-online.ts"
         }
       ]
     }

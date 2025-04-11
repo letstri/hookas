@@ -1,7 +1,7 @@
 import * as React from "react";
 
-export function useElementMeasure<T extends HTMLElement>() {
-  const [dimensions, setDimensions] = React.useState<{
+export function useElementSize<T extends HTMLElement = HTMLElement>(ref: React.RefObject<T>) {
+  const [size, setSize] = React.useState<{
     width: number | null;
     height: number | null;
   }>({
@@ -11,26 +11,35 @@ export function useElementMeasure<T extends HTMLElement>() {
 
   const previousObserver = React.useRef<ResizeObserver | null>(null);
 
-  const customRef = React.useCallback((node: T | null) => {
+  React.useEffect(() => {
+    const element = ref.current;
+
     if (previousObserver.current) {
       previousObserver.current.disconnect();
       previousObserver.current = null;
     }
 
-    if (node?.nodeType === Node.ELEMENT_NODE) {
+    if (element?.nodeType === Node.ELEMENT_NODE) {
       const observer = new ResizeObserver(([entry]) => {
         if (entry && entry.borderBoxSize) {
           const { inlineSize: width, blockSize: height } =
             entry.borderBoxSize[0];
 
-          setDimensions({ width, height });
+          setSize({ width, height });
         }
       });
 
-      observer.observe(node);
+      observer.observe(element);
       previousObserver.current = observer;
     }
-  }, []);
 
-  return [customRef, dimensions];
+    return () => {
+      if (previousObserver.current) {
+        previousObserver.current.disconnect();
+        previousObserver.current = null;
+      }
+    };
+  }, [ref]);
+
+  return size
 }

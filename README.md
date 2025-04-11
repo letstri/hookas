@@ -2,8 +2,6 @@
 
 Hookas is a registry for most popular React hooks based on the [shadcn](https://ui.shadcn.com/) registry system.
 
-> This is not a library.
-
 ## How to use
 
 Find the hook you want to use and copy the link to install the hook into your project. Please note you should have setup shadcn in your project to use this.

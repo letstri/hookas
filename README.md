@@ -1,6 +1,6 @@
 # Hookas
 
-Hookas is a registry for React hooks based on the [shadcn](https://ui.shadcn.com/) project.
+Hookas is a registry for most popular React hooks based on the [shadcn](https://ui.shadcn.com/) registry system.
 
 > This is not a library.
 

@@ -1,20 +1,25 @@
-# registry-template
+# Hookas
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+Hookas is a registry for React hooks based on the [shadcn](https://ui.shadcn.com/) project.
 
-## Getting Started
+> This is not a library.
 
-This is a template for creating a custom registry using Next.js.
+## How to use
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+Find the hook you want to use and copy the link to install the hook into your project. Please note you should have setup shadcn in your project to use this.
 
-## Documentation
+### Hooks
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+- [useIsOnline](#useisonline)
+
+#### useIsOnline
+
+Check if the user is online.
+
+```tsx
+const isOnline = useIsOnline();
+```
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-is-online.json
+```

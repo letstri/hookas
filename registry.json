@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "hookas",
-  "homepage": "https://hookas.letstri.dev",
+  "homepage": "https://github.com/letstri/hookas",
   "items": [
     {
       "name": "use-is-online",

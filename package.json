@@ -6,7 +6,6 @@
     "dev": "next dev --turbopack",
     "build": "next build && pnpm run registry:build",
     "start": "next start",
-    "lint": "next lint",
     "registry:build": "shadcn build"
   },
   "dependencies": {

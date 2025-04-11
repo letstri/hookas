@@ -1,7 +1,6 @@
 {
   "name": "hookas",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build && pnpm run registry:build",

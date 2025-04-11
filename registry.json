@@ -11,7 +11,8 @@
       "files": [
         {
           "path": "registry/hooks/use-is-online.ts",
-          "type": "registry:hook"
+          "type": "registry:hook",
+          "target": "hookas/use-is-online"
         }
       ]
     }

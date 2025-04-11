@@ -10,6 +10,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 
 - [useIsOnline](#useisonline)
 - [useAsyncEffect](#useasynceffect)
+- [useElementSize](#useelementsize)
 
 #### useIsOnline
 

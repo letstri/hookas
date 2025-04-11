@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-is-online",
+  "type": "registry:hook",
+  "title": "useIsOnline",
+  "description": "A hook to check if the user is online",
+  "files": [
+    {
+      "path": "registry/hooks/use-is-online.ts",
+      "content": "'use client'\n\nimport { useEffect, useState } from 'react'\n\nexport function useIsOnline() {\n  const [isOnline, setIsOnline] = useState(false)\n\n  useEffect(() => {\n    const abortController = new AbortController()\n\n    window.addEventListener('online', () => setIsOnline(true), { signal: abortController.signal })\n    window.addEventListener('offline', () => setIsOnline(false), { signal: abortController.signal })\n\n    return () => {\n      abortController.abort()\n    }\n  }, [])\n\n  return isOnline\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

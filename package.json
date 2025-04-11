@@ -6,6 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "vercel-build": "pnpm run registry:build",
     "lint": "next lint",
     "registry:build": "shadcn build"
   },

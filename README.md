@@ -11,6 +11,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useIsOnline](#useisonline)
 - [useAsyncEffect](#useasynceffect)
 - [useElementSize](#useelementsize)
+- [useClickAway](#useclickaway)
 
 #### useIsOnline
 
@@ -67,4 +68,22 @@ const [ref, { width, height }] = useElementSize();
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-element-size.json
+```
+
+#### useClickAway
+
+Handle click away events.
+
+##### Usage
+
+```tsx
+const ref = useRef(null);
+
+useClickAway(ref, () => console.log("clicked away"));
+```
+
+##### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-click-away.json
 ```

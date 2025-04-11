@@ -41,6 +41,19 @@
           "target": "hookas/use-element-size.ts"
         }
       ]
+    },
+    {
+      "name": "use-click-away",
+      "type": "registry:hook",
+      "title": "useClickAway",
+      "description": "A hook to handle click away events",
+      "files": [
+        {
+          "path": "registry/hooks/use-click-away.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-click-away.ts"
+        }
+      ]
     }
   ]
 }

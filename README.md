@@ -16,9 +16,13 @@ Find the hook you want to use and copy the link to install the hook into your pr
 
 Check if the user is online.
 
+##### Usage
+
 ```tsx
 const isOnline = useIsOnline();
 ```
+
+##### Install
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-is-online.json

@@ -10,7 +10,7 @@
       "description": "A hook to check if the user is online",
       "files": [
         {
-          "path": "registry/hooks/use-is-online.ts",
+          "path": "registry/hooks/use-is-online/use-is-online.ts",
           "type": "registry:hook",
           "target": "hookas/use-is-online.ts"
         }
@@ -23,7 +23,7 @@
       "description": "A hook to run an async effect",
       "files": [
         {
-          "path": "registry/hooks/use-async-effect.ts",
+          "path": "registry/hooks/use-async-effect/use-async-effect.ts",
           "type": "registry:hook",
           "target": "hookas/use-async-effect.ts"
         }
@@ -36,7 +36,7 @@
       "description": "A hook to measure the size of an element",
       "files": [
         {
-          "path": "registry/hooks/use-element-size.ts",
+          "path": "registry/hooks/use-element-size/use-element-size.ts",
           "type": "registry:hook",
           "target": "hookas/use-element-size.ts"
         }
@@ -49,7 +49,7 @@
       "description": "A hook to handle click away events",
       "files": [
         {
-          "path": "registry/hooks/use-click-away.ts",
+          "path": "registry/hooks/use-click-away/use-click-away.ts",
           "type": "registry:hook",
           "target": "hookas/use-click-away.ts"
         }

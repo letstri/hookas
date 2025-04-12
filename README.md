@@ -12,6 +12,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useAsyncEffect](#useasynceffect)
 - [useElementSize](#useelementsize)
 - [useClickAway](#useclickaway)
+- [useToggle](#usetoggle)
 
 #### useIsOnline
 
@@ -86,4 +87,20 @@ useClickAway(ref, () => console.log("clicked away"));
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-click-away.json
+```
+
+#### useToggle
+
+Toggle a value.
+
+##### Usage
+
+```tsx
+const [value, toggle] = useToggle();
+```
+
+##### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-toggle.json
 ```

@@ -54,6 +54,19 @@
           "target": "hookas/use-click-away.ts"
         }
       ]
+    },
+    {
+      "name": "use-toggle",
+      "type": "registry:hook",
+      "title": "useToggle",
+      "description": "A hook to toggle a value",
+      "files": [
+        {
+          "path": "registry/hooks/use-toggle/use-toggle.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-toggle.ts"
+        }
+      ]
     }
   ]
 }

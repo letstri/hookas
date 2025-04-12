@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation'
 
 export function GET() {
-  return redirect("https://github.com/letstri/hookas");
+  return redirect('https://github.com/letstri/hookas')
 }

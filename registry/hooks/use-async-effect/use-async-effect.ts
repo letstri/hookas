@@ -1,27 +1,28 @@
-"use client";
+'use client'
 
-import type { DependencyList } from "react";
-import * as React from "react";
+import type { DependencyList } from 'react'
+import * as React from 'react'
 
 export function useAsyncEffect(
   effect: () => Promise<void | (() => Promise<void> | void)>,
-  deps?: DependencyList
+  deps?: DependencyList,
 ) {
   const [destroy, setDestroy] = React.useState<
     void | (() => Promise<void> | void) | undefined
-  >(undefined);
+  >(undefined)
 
   React.useEffect(() => {
-    const e = effect();
+    const e = effect()
 
     async function execute() {
-      setDestroy(await e);
+      setDestroy(await e)
     }
 
-    execute();
+    execute()
 
     return () => {
-      if (typeof destroy === "function") destroy();
-    };
-  }, deps);
+      if (typeof destroy === 'function')
+        destroy()
+    }
+  }, deps)
 }

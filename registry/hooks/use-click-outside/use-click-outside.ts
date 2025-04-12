@@ -1,9 +1,11 @@
+'use client'
+
 import * as React from 'react'
 
 export function useClickOutside<T extends Element = Element>(
   ref: React.RefObject<T> | React.RefObject<T>[],
   handler: (event: MouseEvent | TouchEvent) => void,
-  options?: { enabled?: boolean }
+  options?: { enabled?: boolean },
 ): void {
   const { enabled = true } = options ?? {}
   const handlerRef = React.useRef(handler)
@@ -13,7 +15,8 @@ export function useClickOutside<T extends Element = Element>(
   }, [handler])
 
   React.useEffect(() => {
-    if (!enabled) return
+    if (!enabled)
+      return
 
     const abortController = new AbortController()
 

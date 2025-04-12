@@ -1,24 +1,24 @@
-"use client";
+'use client'
 
-import * as React from "react";
+import * as React from 'react'
 
 export function useIsOnline() {
-  const [isOnline, setIsOnline] = React.useState(false);
+  const [isOnline, setIsOnline] = React.useState(false)
 
   React.useEffect(() => {
-    const abortController = new AbortController();
+    const abortController = new AbortController()
 
-    window.addEventListener("online", () => setIsOnline(true), {
+    window.addEventListener('online', () => setIsOnline(true), {
       signal: abortController.signal,
-    });
-    window.addEventListener("offline", () => setIsOnline(false), {
+    })
+    window.addEventListener('offline', () => setIsOnline(false), {
       signal: abortController.signal,
-    });
+    })
 
     return () => {
-      abortController.abort();
-    };
-  }, []);
+      abortController.abort()
+    }
+  }, [])
 
-  return isOnline;
+  return isOnline
 }

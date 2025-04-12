@@ -1,13 +1,13 @@
-"use client";
+'use client'
 
-import * as React from "react";
+import * as React from 'react'
 
-export function useToggle(initialValue = false){
-  const [value, setValue] = React.useState(initialValue);
+export function useToggle(initialValue = false) {
+  const [value, setValue] = React.useState(initialValue)
 
   const toggle = React.useCallback((value?: boolean) => {
-    setValue(prev => value ?? !prev);
-  }, []);
+    setValue(prev => value ?? !prev)
+  }, [])
 
-  return [value, toggle] as const;
+  return [value, toggle] as const
 }

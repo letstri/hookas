@@ -1,9 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
-    registry: ["./registry/**/*"],
+    registry: ['./registry/**/*'],
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig

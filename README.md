@@ -6,35 +6,35 @@ Hookas is a registry for most popular React hooks based on the [shadcn](https://
 
 Find the hook you want to use and copy the link to install the hook into your project. Please note you should have setup shadcn in your project to use this.
 
-### Hooks
+## Hooks
 
-- [useIsOnline](#useisonline)
-- [useAsyncEffect](#useasynceffect)
-- [useElementSize](#useelementsize)
-- [useClickAway](#useclickaway)
-- [useToggle](#usetoggle)
+- [useIsOnline](#useisonline) - Check if the user is online
+- [useAsyncEffect](#useasynceffect) - Run asynchronous effects safely
+- [useElementSize](#useelementsize) - Track element dimensions
+- [useClickAway](#useclickaway) - Detect clicks outside an element
+- [useToggle](#usetoggle) - Toggle boolean states easily
 
-#### useIsOnline
+### useIsOnline
 
 Check if the user is online.
 
-##### Usage
+#### Usage
 
 ```tsx
 const isOnline = useIsOnline();
 ```
 
-##### Install
+#### Install
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-is-online.json
 ```
 
-#### useAsyncEffect
+### useAsyncEffect
 
 Run an async effect.
 
-##### Usage
+#### Usage
 
 ```tsx
 useAsyncEffect(async () => {
@@ -44,17 +44,17 @@ useAsyncEffect(async () => {
 }, []);
 ```
 
-##### Install
+#### Install
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-async-effect.json
 ```
 
-#### useElementSize
+### useElementSize
 
 Measure the size of an element.
 
-##### Usage
+#### Usage
 
 ```tsx
 const [ref, { width, height }] = useElementSize();
@@ -65,17 +65,17 @@ const [ref, { width, height }] = useElementSize();
 </div>;
 ```
 
-##### Install
+#### Install
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-element-size.json
 ```
 
-#### useClickAway
+### useClickAway
 
 Handle click away events.
 
-##### Usage
+#### Usage
 
 ```tsx
 const ref = useRef(null);
@@ -83,23 +83,23 @@ const ref = useRef(null);
 useClickAway(ref, () => console.log("clicked away"));
 ```
 
-##### Install
+#### Install
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-click-away.json
 ```
 
-#### useToggle
+### useToggle
 
 Toggle a value.
 
-##### Usage
+#### Usage
 
 ```tsx
 const [value, toggle] = useToggle();
 ```
 
-##### Install
+#### Install
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-toggle.json

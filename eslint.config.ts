@@ -5,5 +5,6 @@ export default antfu({
   react: true,
   rules: {
     'react-hooks/rules-of-hooks': 'off',
+    'node/prefer-global/process': 'off',
   },
 })

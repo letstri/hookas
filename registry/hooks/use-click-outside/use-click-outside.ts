@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export function useClickAway<T extends HTMLElement = HTMLElement>(
+export function useClickOutside<T extends Element = Element>(
   ref: React.RefObject<T> | React.RefObject<T>[],
   handler: (event: MouseEvent | TouchEvent) => void,
   options?: { enabled?: boolean }

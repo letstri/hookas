@@ -11,7 +11,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useIsOnline](#useisonline) - Check if the user is online
 - [useAsyncEffect](#useasynceffect) - Run asynchronous effects safely
 - [useElementSize](#useelementsize) - Track element dimensions
-- [useClickAway](#useclickaway) - Detect clicks outside an element
+- [useClickOutside](#useclickoutside) - Detect clicks outside an element
 - [useToggle](#usetoggle) - Toggle boolean states easily
 
 ### useIsOnline
@@ -71,22 +71,22 @@ const [ref, { width, height }] = useElementSize();
 npx shadcn@latest add https://hookas.letstri.dev/r/use-element-size.json
 ```
 
-### useClickAway
+### useClickOutside
 
-Handle click away events.
+Handle click outside events.
 
 #### Usage
 
 ```tsx
 const ref = useRef(null);
 
-useClickAway(ref, () => console.log("clicked away"));
+useClickOutside(ref, () => console.log("clicked outside"));
 ```
 
 #### Install
 
 ```bash
-npx shadcn@latest add https://hookas.letstri.dev/r/use-click-away.json
+npx shadcn@latest add https://hookas.letstri.dev/r/use-click-outside.json
 ```
 
 ### useToggle
@@ -103,4 +103,20 @@ const [value, toggle] = useToggle();
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-toggle.json
+```
+
+### useWindowSize
+
+Get the size of the window.
+
+#### Usage
+
+```tsx
+const { width, height } = useWindowSize();
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-window-size.json
 ```

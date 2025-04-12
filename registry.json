@@ -43,15 +43,15 @@
       ]
     },
     {
-      "name": "use-click-away",
+      "name": "use-click-outside",
       "type": "registry:hook",
-      "title": "useClickAway",
-      "description": "A hook to handle click away events",
+      "title": "useClickOutside",
+      "description": "A hook to handle click outside events",
       "files": [
         {
-          "path": "registry/hooks/use-click-away/use-click-away.ts",
+          "path": "registry/hooks/use-click-outside/use-click-outside.ts",
           "type": "registry:hook",
-          "target": "hookas/use-click-away.ts"
+          "target": "hookas/use-click-outside.ts"
         }
       ]
     },

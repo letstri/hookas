@@ -15,6 +15,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useToggle](#usetoggle) - Toggle boolean states easily
 - [useWindowSize](#usewindowsize) - Track window dimensions
 - [useIsMounted](#useismounted) - Check if the component is mounted
+- [useQuery](#usequery) - Query data
 
 ### useIsOnline
 
@@ -23,7 +24,12 @@ Check if the user is online.
 #### Usage
 
 ```tsx
-const isOnline = useIsOnline()
+import { useIsOnline } from '@/hooks/use-is-online'
+
+function ConnectionStatus() {
+  const isOnline = useIsOnline()
+  return <div>{isOnline ? 'Online' : 'Offline'}</div>
+}
 ```
 
 #### Install
@@ -39,11 +45,20 @@ Run an async effect.
 #### Usage
 
 ```tsx
-useAsyncEffect(async () => {
-  const res = await fetch('https://api.example.com/data')
-  const data = await res.json()
-  console.log(data)
-}, [])
+import { useAsyncEffect } from '@/hooks/use-async-effect'
+import { useState } from 'react'
+
+function DataFetcher() {
+  const [data, setData] = useState(null)
+
+  useAsyncEffect(async () => {
+    const res = await fetch('https://api.example.com/data')
+    const json = await res.json()
+    setData(json)
+  }, [])
+
+  return <pre>{JSON.stringify(data, null, 2)}</pre>
+}
 ```
 
 #### Install
@@ -59,21 +74,28 @@ Measure the size of an element.
 #### Usage
 
 ```tsx
-const ref = useRef(null)
-const { width, height } = useElementSize(ref)
+import { useElementSize } from '@/hooks/use-element-size'
+import { useRef } from 'react'
 
-return (
-  <div ref={ref}>
-    <p>
-      Width:
-      {width}
-    </p>
-    <p>
-      Height:
-      {height}
-    </p>
-  </div>
-)
+function ResizableBox() {
+  const ref = useRef(null)
+  const { width, height } = useElementSize(ref)
+
+  return (
+    <div ref={ref}>
+      <p>
+        Width:
+        {width}
+        px
+      </p>
+      <p>
+        Height:
+        {height}
+        px
+      </p>
+    </div>
+  )
+}
 ```
 
 #### Install
@@ -89,9 +111,22 @@ Handle click outside events.
 #### Usage
 
 ```tsx
-const ref = useRef(null)
+import { useClickOutside } from '@/hooks/use-click-outside'
+import { useRef, useState } from 'react'
 
-useClickOutside(ref, () => console.log('clicked outside'))
+function DropdownMenu() {
+  const [isOpen, setIsOpen] = useState(false)
+  const ref = useRef(null)
+
+  useClickOutside(ref, () => setIsOpen(false))
+
+  return (
+    <div ref={ref}>
+      <button onClick={() => setIsOpen(!isOpen)}>Toggle Menu</button>
+      {isOpen && <div>Menu Content</div>}
+    </div>
+  )
+}
 ```
 
 #### Install
@@ -107,7 +142,21 @@ Toggle a value.
 #### Usage
 
 ```tsx
-const [value, toggle] = useToggle()
+import { useToggle } from '@/hooks/use-toggle'
+
+function ToggleButton() {
+  const [isOn, toggle] = useToggle(false)
+
+  return (
+    <div>
+      <button onClick={toggle}>{isOn ? 'ON' : 'OFF'}</button>
+      <span>
+        State:
+        {isOn ? 'Enabled' : 'Disabled'}
+      </span>
+    </div>
+  )
+}
 ```
 
 #### Install
@@ -123,7 +172,26 @@ Get the size of the window.
 #### Usage
 
 ```tsx
-const { width, height } = useWindowSize()
+import { useWindowSize } from '@/hooks/use-window-size'
+
+function WindowSizeDisplay() {
+  const { width, height } = useWindowSize()
+
+  return (
+    <div>
+      <p>
+        Width:
+        {width}
+        px
+      </p>
+      <p>
+        Height:
+        {height}
+        px
+      </p>
+    </div>
+  )
+}
 ```
 
 #### Install
@@ -139,11 +207,51 @@ Check if the component is mounted.
 #### Usage
 
 ```tsx
-const isMounted = useIsMounted()
+import { useIsMounted } from '@/hooks/use-is-mounted'
+import { useEffect, useState } from 'react'
+
+function MountStatus() {
+  const isMounted = useIsMounted()
+  const [status, setStatus] = useState('Loading...')
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (isMounted()) {
+        setStatus('Mounted')
+      }
+    }, 1000)
+
+    return () => clearTimeout(timer)
+  }, [isMounted])
+
+  return <div>{status}</div>
+}
 ```
 
 #### Install
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-is-mounted.json
+```
+
+### useQuery
+
+Small alternative to @tanstack/react-query.
+
+#### Usage
+
+```tsx
+import { useQuery } from '@/hooks/use-query'
+
+function DataFetcher() {
+  const { data, error, status, refetch } = useQuery({ fetcher: () => fetch('https://api.example.com/data') })
+
+  return <div>{JSON.stringify(data)}</div>
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-query.json
 ```

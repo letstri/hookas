@@ -10,7 +10,7 @@
       "description": "A hook to check if the user is online",
       "files": [
         {
-          "path": "registry/hooks/use-is-online/use-is-online.ts",
+          "path": "registry/hooks/use-is-online.ts",
           "type": "registry:hook",
           "target": "hookas/use-is-online.ts"
         }
@@ -23,7 +23,7 @@
       "description": "A hook to run an async effect",
       "files": [
         {
-          "path": "registry/hooks/use-async-effect/use-async-effect.ts",
+          "path": "registry/hooks/use-async-effect.ts",
           "type": "registry:hook",
           "target": "hookas/use-async-effect.ts"
         }
@@ -36,7 +36,7 @@
       "description": "A hook to measure the size of an element",
       "files": [
         {
-          "path": "registry/hooks/use-element-size/use-element-size.ts",
+          "path": "registry/hooks/use-element-size.ts",
           "type": "registry:hook",
           "target": "hookas/use-element-size.ts"
         }
@@ -49,7 +49,7 @@
       "description": "A hook to handle click outside events",
       "files": [
         {
-          "path": "registry/hooks/use-click-outside/use-click-outside.ts",
+          "path": "registry/hooks/use-click-outside.ts",
           "type": "registry:hook",
           "target": "hookas/use-click-outside.ts"
         }
@@ -62,9 +62,22 @@
       "description": "A hook to toggle a value",
       "files": [
         {
-          "path": "registry/hooks/use-toggle/use-toggle.ts",
+          "path": "registry/hooks/use-toggle.ts",
           "type": "registry:hook",
           "target": "hookas/use-toggle.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-query",
+      "type": "registry:hook",
+      "title": "useQuery",
+      "description": "A hook to query data",
+      "files": [
+        {
+          "path": "registry/hooks/use-query.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-query.ts"
         }
       ]
     }

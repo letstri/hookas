@@ -212,19 +212,14 @@ import { useEffect, useState } from 'react'
 
 function MountStatus() {
   const isMounted = useIsMounted()
-  const [status, setStatus] = useState('Loading...')
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (isMounted()) {
-        setStatus('Mounted')
-      }
-    }, 1000)
-
-    return () => clearTimeout(timer)
-  }, [isMounted])
-
-  return <div>{status}</div>
+  return (
+    <div>
+      Component is
+      {isMounted ? 'mounted' : 'not mounted'}
+      !
+    </div>
+  )
 }
 ```
 

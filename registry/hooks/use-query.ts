@@ -2,14 +2,14 @@
 
 import * as React from 'react'
 
-interface UseQueryProps {
-  fetcher: () => Promise<any>
+interface UseQueryProps<T> {
+  fetcher: () => Promise<T>
   manual?: boolean
 }
 
-export function useQuery({ fetcher, manual = false }: UseQueryProps) {
+export function useQuery<T>({ fetcher, manual = false }: UseQueryProps<T>) {
   const [error, setError] = React.useState<Error | null>(null)
-  const [data, setData] = React.useState<any>(null)
+  const [data, setData] = React.useState<T | null>(null)
   const [status, setStatus] = React.useState<
     'idle' | 'loading' | 'success' | 'error'
   >('idle')

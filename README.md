@@ -24,7 +24,7 @@ Check if the user is online.
 #### Usage
 
 ```tsx
-import { useIsOnline } from '@/hooks/use-is-online'
+import { useIsOnline } from '@/hookas/use-is-online'
 
 function ConnectionStatus() {
   const isOnline = useIsOnline()
@@ -45,7 +45,7 @@ Run an async effect.
 #### Usage
 
 ```tsx
-import { useAsyncEffect } from '@/hooks/use-async-effect'
+import { useAsyncEffect } from '@/hookas/use-async-effect'
 import { useState } from 'react'
 
 function DataFetcher() {
@@ -74,7 +74,7 @@ Measure the size of an element.
 #### Usage
 
 ```tsx
-import { useElementSize } from '@/hooks/use-element-size'
+import { useElementSize } from '@/hookas/use-element-size'
 import { useRef } from 'react'
 
 function ResizableBox() {
@@ -111,7 +111,7 @@ Handle click outside events.
 #### Usage
 
 ```tsx
-import { useClickOutside } from '@/hooks/use-click-outside'
+import { useClickOutside } from '@/hookas/use-click-outside'
 import { useRef, useState } from 'react'
 
 function DropdownMenu() {
@@ -142,7 +142,7 @@ Toggle a value.
 #### Usage
 
 ```tsx
-import { useToggle } from '@/hooks/use-toggle'
+import { useToggle } from '@/hookas/use-toggle'
 
 function ToggleButton() {
   const [isOn, toggle] = useToggle(false)
@@ -172,7 +172,7 @@ Get the size of the window.
 #### Usage
 
 ```tsx
-import { useWindowSize } from '@/hooks/use-window-size'
+import { useWindowSize } from '@/hookas/use-window-size'
 
 function WindowSizeDisplay() {
   const { width, height } = useWindowSize()
@@ -207,7 +207,7 @@ Check if the component is mounted.
 #### Usage
 
 ```tsx
-import { useIsMounted } from '@/hooks/use-is-mounted'
+import { useIsMounted } from '@/hookas/use-is-mounted'
 import { useEffect, useState } from 'react'
 
 function MountStatus() {
@@ -241,7 +241,7 @@ Small alternative to @tanstack/react-query.
 #### Usage
 
 ```tsx
-import { useQuery } from '@/hooks/use-query'
+import { useQuery } from '@/hookas/use-query'
 
 function DataFetcher() {
   const { data, error, status, refetch } = useQuery({ fetcher: () => fetch('https://api.example.com/data') })

@@ -145,6 +145,19 @@
           "target": "hookas/use-throttled-function.ts"
         }
       ]
+    },
+    {
+      "name": "use-promise",
+      "type": "registry:hook",
+      "title": "usePromise",
+      "description": "A hook to handle promises",
+      "files": [
+        {
+          "path": "registry/hooks/use-promise.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-promise.ts"
+        }
+      ]
     }
   ]
 }

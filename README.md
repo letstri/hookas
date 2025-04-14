@@ -21,6 +21,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useMousePosition](#usemouseposition) - Track the mouse position
 - [useDebounceFunction](#usedebouncefunction) - Debounce a function
 - [useThrottledFunction](#usethrottledfunction) - Throttle a function
+- [usePromise](#usepromise) - Handle promises
 
 ### useIsOnline
 
@@ -364,4 +365,32 @@ function ThrottledFunction() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-throttled-function.json
+```
+
+### usePromise
+
+Handle promises.
+
+#### Usage
+
+```tsx
+import { usePromise } from '@/hookas/use-promise'
+
+function PromiseExample() {
+  const data = usePromise(async () => [{ name: 'Valerii' }], [])
+
+  return (
+    <div>
+      {data.map(item => (
+        <div key={item.name}>{item.name}</div>
+      ))}
+    </div>
+  )
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-promise.json
 ```

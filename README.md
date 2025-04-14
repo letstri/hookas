@@ -15,13 +15,13 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useToggle](#usetoggle) - Toggle boolean states easily
 - [useWindowSize](#usewindowsize) - Track window dimensions
 - [useIsMounted](#useismounted) - Check if the component is mounted
-- [useQuery](#usequery) - Query data
+- [useQuery](#usequery) - Small alternative to @tanstack/react-query
 - [useMediaQuery](#usemediaquery) - Check if the user is online
 - [useFullscreen](#usefullscreen) - Handle fullscreen mode
 - [useMousePosition](#usemouseposition) - Track the mouse position
 - [useDebounceFunction](#usedebouncefunction) - Debounce a function
 - [useThrottledFunction](#usethrottledfunction) - Throttle a function
-- [usePromise](#usepromise) - Handle promises
+- [usePromise](#usepromise) - Small alternative to `use` hook
 
 ### useIsOnline
 
@@ -381,7 +381,7 @@ npx shadcn@latest add https://hookas.letstri.dev/r/use-throttled-function.json
 
 ### usePromise
 
-Handle promises.
+Handle promises without `use` hook.
 
 #### Usage
 

@@ -19,7 +19,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useMediaQuery](#usemediaquery) - Check if the user is online
 - [useFullscreen](#usefullscreen) - Handle fullscreen mode
 - [useMousePosition](#usemouseposition) - Track the mouse position
-- [useDebounceFunction](#usedebouncefunction) - Debounce a function
+- [useDebouncedFunction](#usedebouncedfunction) - Debounce a function
 - [useThrottledFunction](#usethrottledfunction) - Throttle a function
 - [usePromise](#usepromise) - Small alternative to `use` hook
 
@@ -331,7 +331,7 @@ function MousePosition() {
 npx shadcn@latest add https://hookas.letstri.dev/r/use-mouse-position.json
 ```
 
-### useDebounceFunction
+### useDebouncedFunction
 
 Debounce a function.
 

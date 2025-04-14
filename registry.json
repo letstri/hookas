@@ -121,15 +121,15 @@
       ]
     },
     {
-      "name": "use-debounce-function",
+      "name": "use-debounced-function",
       "type": "registry:hook",
       "title": "useDebounceFunction",
       "description": "A hook to debounce a function",
       "files": [
         {
-          "path": "registry/hooks/use-debounce-function.ts",
+          "path": "registry/hooks/use-debounced-function.ts",
           "type": "registry:hook",
-          "target": "hookas/use-debounce-function.ts"
+          "target": "hookas/use-debounced-function.ts"
         }
       ]
     },

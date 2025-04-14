@@ -1,24 +1,17 @@
-'use client'
-
-import * as React from 'react'
+import { useSyncExternalStore } from 'react'
 
 export function useIsOnline() {
-  const [isOnline, setIsOnline] = React.useState(false)
-
-  React.useEffect(() => {
-    const abortController = new AbortController()
-
-    window.addEventListener('online', () => setIsOnline(true), {
-      signal: abortController.signal,
-    })
-    window.addEventListener('offline', () => setIsOnline(false), {
-      signal: abortController.signal,
-    })
+  const onlineSubscriber = (cb: () => void) => {
+    window.addEventListener('online', cb)
+    window.addEventListener('offline', cb)
 
     return () => {
-      abortController.abort()
+      window.removeEventListener('online', cb)
+      window.removeEventListener('offline', cb)
     }
-  }, [])
+  }
+
+  const isOnline = useSyncExternalStore(onlineSubscriber, () => window.navigator.onLine)
 
   return isOnline
 }

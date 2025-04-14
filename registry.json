@@ -93,6 +93,32 @@
           "target": "hookas/use-media-query.ts"
         }
       ]
+    },
+    {
+      "name": "use-fullscreen",
+      "type": "registry:hook",
+      "title": "useFullscreen",
+      "description": "A hook to handle fullscreen mode",
+      "files": [
+        {
+          "path": "registry/hooks/use-fullscreen.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-fullscreen.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-mouse-position",
+      "type": "registry:hook",
+      "title": "useMousePosition",
+      "description": "A hook to track the mouse position",
+      "files": [
+        {
+          "path": "registry/hooks/use-mouse-position.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-mouse-position.ts"
+        }
+      ]
     }
   ]
 }

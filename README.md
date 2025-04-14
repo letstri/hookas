@@ -17,6 +17,8 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useIsMounted](#useismounted) - Check if the component is mounted
 - [useQuery](#usequery) - Query data
 - [useMediaQuery](#usemediaquery) - Check if the user is online
+- [useFullscreen](#usefullscreen) - Handle fullscreen mode
+- [useMousePosition](#usemouseposition) - Track the mouse position
 
 ### useIsOnline
 
@@ -272,4 +274,44 @@ function MediaQueryExample() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-media-query.json
+```
+
+### useFullscreen
+
+Handle fullscreen mode.
+
+#### Usage
+
+```tsx
+import { useFullscreen } from '@/hookas/use-fullscreen'
+
+function FullscreenExample() {
+  const { isFullscreen, toggleFullscreen } = useFullscreen()
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-fullscreen.json
+```
+
+### useMousePosition
+
+Track the mouse position.
+
+#### Usage
+
+```tsx
+import { useMousePosition } from '@/hookas/use-mouse-position'
+
+function MousePosition() {
+  const { x, y } = useMousePosition()
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-mouse-position.json
 ```

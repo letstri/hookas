@@ -311,6 +311,18 @@ import { useMousePosition } from '@/hookas/use-mouse-position'
 function MousePosition() {
   const { x, y } = useMousePosition()
 }
+
+function MousePosition() {
+  const ref = useRef(null)
+  const { x, y } = useMousePosition(ref)
+
+  return (
+    <div ref={ref}>
+      {x}
+      {y}
+    </div>
+  )
+}
 ```
 
 #### Install

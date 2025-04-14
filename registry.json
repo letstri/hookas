@@ -80,6 +80,19 @@
           "target": "hookas/use-query.ts"
         }
       ]
+    },
+    {
+      "name": "use-media-query",
+      "type": "registry:hook",
+      "title": "useMediaQuery",
+      "description": "A hook to check if the user is online",
+      "files": [
+        {
+          "path": "registry/hooks/use-media-query.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-media-query.ts"
+        }
+      ]
     }
   ]
 }

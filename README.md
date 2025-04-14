@@ -16,6 +16,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useWindowSize](#usewindowsize) - Track window dimensions
 - [useIsMounted](#useismounted) - Check if the component is mounted
 - [useQuery](#usequery) - Query data
+- [useMediaQuery](#usemediaquery) - Check if the user is online
 
 ### useIsOnline
 
@@ -249,4 +250,26 @@ function DataFetcher() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-query.json
+```
+
+### useMediaQuery
+
+Check if the user is online.
+
+#### Usage
+
+```tsx
+import { useMediaQuery } from '@/hookas/use-media-query'
+
+function MediaQueryExample() {
+  const isMobile = useMediaQuery('(max-width: 768px)')
+
+  return <div>{isMobile ? 'Mobile' : 'Desktop'}</div>
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-media-query.json
 ```

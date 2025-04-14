@@ -19,6 +19,8 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useMediaQuery](#usemediaquery) - Check if the user is online
 - [useFullscreen](#usefullscreen) - Handle fullscreen mode
 - [useMousePosition](#usemouseposition) - Track the mouse position
+- [useDebounceFunction](#usedebouncefunction) - Debounce a function
+- [useThrottledFunction](#usethrottledfunction) - Throttle a function
 
 ### useIsOnline
 
@@ -314,4 +316,52 @@ function MousePosition() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-mouse-position.json
+```
+
+### useDebounceFunction
+
+Debounce a function.
+
+#### Usage
+
+```tsx
+import { useDebounceFunction } from '@/hookas/use-debounce-function'
+
+function DebouncedFunction() {
+  const debouncedFn = useDebounceFunction((a: number, b: number) => {
+    console.log(a, b)
+  }, 1000)
+
+  return <button onClick={() => debouncedFn(1, 2)}>Debounce</button>
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-debounce-function.json
+```
+
+### useThrottledFunction
+
+Throttle a function.
+
+#### Usage
+
+```tsx
+import { useThrottledFunction } from '@/hookas/use-throttled-function'
+
+function ThrottledFunction() {
+  const throttledFn = useThrottledFunction((a: number, b: number) => {
+    console.log(a, b)
+  }, 1000)
+
+  return <button onClick={() => throttledFn(1, 2)}>Throttle</button>
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-throttled-function.json
 ```

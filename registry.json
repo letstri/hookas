@@ -119,6 +119,32 @@
           "target": "hookas/use-mouse-position.ts"
         }
       ]
+    },
+    {
+      "name": "use-debounce-function",
+      "type": "registry:hook",
+      "title": "useDebounceFunction",
+      "description": "A hook to debounce a function",
+      "files": [
+        {
+          "path": "registry/hooks/use-debounce-function.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-debounce-function.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-throttled-function",
+      "type": "registry:hook",
+      "title": "useThrottledFunction",
+      "description": "A hook to throttle a function",
+      "files": [
+        {
+          "path": "registry/hooks/use-throttled-function.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-throttled-function.ts"
+        }
+      ]
     }
   ]
 }

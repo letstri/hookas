@@ -138,7 +138,7 @@
       "type": "registry:hook",
       "title": "useDebounceMemo",
       "description": "A hook to debounce a memo",
-      "registryDependencies": ["use-debounced-callback"],
+      "registryDependencies": ["https://hookas.letstri.dev/r/use-debounced-callback.json"],
       "files": [
         {
           "path": "registry/hooks/use-debounced-memo.ts",

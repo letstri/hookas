@@ -1,6 +1,6 @@
 # Hookas
 
-Hookas is a registry for most popular React hooks based on the [shadcn](https://ui.shadcn.com/) registry system.
+Hookas is a comprehensive registry for popular React hooks, inspired by the [shadcn](https://ui.shadcn.com/) registry system. It provides a collection of well-tested, production-ready hooks that solve common React development challenges.
 
 ## How to use
 
@@ -8,20 +8,22 @@ Find the hook you want to use and copy the link to install the hook into your pr
 
 ## Hooks
 
-- [useIsOnline](#useisonline) - Check if the user is online
-- [useAsyncEffect](#useasynceffect) - Run asynchronous effects safely
-- [useElementSize](#useelementsize) - Track element dimensions
-- [useClickOutside](#useclickoutside) - Detect clicks outside an element
-- [useToggle](#usetoggle) - Toggle boolean states easily
-- [useWindowSize](#usewindowsize) - Track window dimensions
+- [useIsOnline](#useisonline) - Monitor network connectivity status with automatic reconnection handling
+- [useAsyncEffect](#useasynceffect) - Handle asynchronous operations in React effects
+- [useElementSize](#useelementsize) - Track and respond to element dimensions with ResizeObserver
+- [useClickOutside](#useclickoutside) - Detect and handle clicks outside specified elements
+- [useToggle](#usetoggle) - Manage boolean state with a convenient toggle function
+- [useWindowSize](#usewindowsize) - Monitor window dimensions
 - [useIsMounted](#useismounted) - Check if the component is mounted
-- [useQuery](#usequery) - Small alternative to `@tanstack/react-query`
-- [useMediaQuery](#usemediaquery) - Check if the browser matches a media query
-- [useFullscreen](#usefullscreen) - Handle fullscreen mode
-- [useMousePosition](#usemouseposition) - Track the mouse position
-- [useDebouncedFunction](#usedebouncedfunction) - Debounce a function
-- [useThrottledFunction](#usethrottledfunction) - Throttle a function
-- [usePromise](#usepromise) - Small alternative to `use` hook
+- [useQuery](#usequery) - Lightweight data fetching solution
+- [useMediaQuery](#usemediaquery) - Reactively respond to CSS media queries
+- [useFullscreen](#usefullscreen) - Control fullscreen mode
+- [useMousePosition](#usemouseposition) - Track mouse coordinates
+- [useDebouncedCallback](#usedebouncedcallback) - Optimize performance by debouncing function calls
+- [useDebouncedMemo](#usedebouncedmemo) - Debounce expensive computations
+- [useDebouncedState](#usedebouncedstate) - Manage state with debounced updates
+- [useThrottledCallback](#usethrottledcallback) - Control function execution rate with throttling
+- [usePromise](#usepromise) - Handle promises without `use` hook
 
 ### useIsOnline
 
@@ -331,17 +333,17 @@ function MousePosition() {
 npx shadcn@latest add https://hookas.letstri.dev/r/use-mouse-position.json
 ```
 
-### useDebouncedFunction
+### useDebouncedCallback
 
-Debounce a function.
+Debounce a callback.
 
 #### Usage
 
 ```tsx
-import { useDebounceFunction } from '@/hookas/use-debounce-function'
+import { useDebouncedCallback } from '@/hookas/use-debounced-callback'
 
-function DebouncedFunction() {
-  const debouncedFn = useDebounceFunction((a: number, b: number) => {
+function DebouncedCallback() {
+  const debouncedFn = useDebouncedCallback((a: number, b: number) => {
     console.log(a, b)
   }, 1000)
 
@@ -349,23 +351,59 @@ function DebouncedFunction() {
 }
 ```
 
-#### Install
+### useDebouncedMemo
 
-```bash
-npx shadcn@latest add https://hookas.letstri.dev/r/use-debounce-function.json
-```
-
-### useThrottledFunction
-
-Throttle a function.
+Debounce a memo.
 
 #### Usage
 
 ```tsx
-import { useThrottledFunction } from '@/hookas/use-throttled-function'
+import { useDebouncedMemo } from '@/hookas/use-debounced-memo'
 
-function ThrottledFunction() {
-  const throttledFn = useThrottledFunction((a: number, b: number) => {
+function DebouncedMemo() {
+  const debouncedMemo = useDebouncedMemo(() => 'Hello', [1, 2, 3], 1000)
+
+  return <div>{debouncedMemo}</div>
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-debounced-memo.json
+```
+
+### useDebouncedState
+
+Debounce a state.
+
+#### Usage
+
+```tsx
+import { useDebouncedState } from '@/hookas/use-debounced-state'
+
+function DebouncedState() {
+  const [state, setState] = useDebouncedState('Hello', 1000)
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-debounced-state.json
+```
+
+### useThrottledCallback
+
+Throttle a callback.
+
+#### Usage
+
+```tsx
+import { useThrottledCallback } from '@/hookas/use-throttled-callback'
+
+function ThrottledCallback() {
+  const throttledFn = useThrottledCallback((a: number, b: number) => {
     console.log(a, b)
   }, 1000)
 
@@ -376,7 +414,7 @@ function ThrottledFunction() {
 #### Install
 
 ```bash
-npx shadcn@latest add https://hookas.letstri.dev/r/use-throttled-function.json
+npx shadcn@latest add https://hookas.letstri.dev/r/use-throttled-callback.json
 ```
 
 ### usePromise

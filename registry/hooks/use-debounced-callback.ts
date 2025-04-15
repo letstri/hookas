@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-export function useDebouncedFunction<T extends (...args: any[]) => any>(
+export function useDebouncedCallback<T extends (...args: any[]) => any>(
   fn: T,
   delay = 0,
 ): (...args: Parameters<T>) => void {

@@ -121,28 +121,54 @@
       ]
     },
     {
-      "name": "use-debounced-function",
+      "name": "use-debounced-callback",
       "type": "registry:hook",
-      "title": "useDebounceFunction",
-      "description": "A hook to debounce a function",
+      "title": "useDebounceCallback",
+      "description": "A hook to debounce a callback",
       "files": [
         {
-          "path": "registry/hooks/use-debounced-function.ts",
+          "path": "registry/hooks/use-debounced-callback.ts",
           "type": "registry:hook",
-          "target": "hookas/use-debounced-function.ts"
+          "target": "hookas/use-debounced-callback.ts"
         }
       ]
     },
     {
-      "name": "use-throttled-function",
+      "name": "use-debounced-memo",
       "type": "registry:hook",
-      "title": "useThrottledFunction",
-      "description": "A hook to throttle a function",
+      "title": "useDebounceMemo",
+      "description": "A hook to debounce a memo",
       "files": [
         {
-          "path": "registry/hooks/use-throttled-function.ts",
+          "path": "registry/hooks/use-debounced-memo.ts",
           "type": "registry:hook",
-          "target": "hookas/use-throttled-function.ts"
+          "target": "hookas/use-debounced-memo.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-debounced-state",
+      "type": "registry:hook",
+      "title": "useDebounceState",
+      "description": "A hook to debounce a state",
+      "files": [
+        {
+          "path": "registry/hooks/use-debounced-state.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-debounced-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-throttled-callback",
+      "type": "registry:hook",
+      "title": "useThrottleCallback",
+      "description": "A hook to throttle a callback",
+      "files": [
+        {
+          "path": "registry/hooks/use-throttled-callback.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-throttled-callback.ts"
         }
       ]
     },

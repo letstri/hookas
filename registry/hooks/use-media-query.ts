@@ -7,21 +7,20 @@ export function useMediaQuery(
   initialValue?: boolean,
 ) {
   const [matches, setMatches] = React.useState(initialValue ?? false)
-  const queryRef = React.useRef<MediaQueryList | null>(null)
 
   React.useEffect(() => {
-    queryRef.current = window.matchMedia(query)
+    const mediaQuery = window.matchMedia(query)
 
-    setMatches(queryRef.current.matches)
+    setMatches(mediaQuery.matches)
 
     const handleChange = (event: MediaQueryListEvent) => {
       setMatches(event.matches)
     }
 
-    queryRef.current.addEventListener('change', handleChange)
+    mediaQuery.addEventListener('change', handleChange)
 
     return () => {
-      queryRef.current?.removeEventListener('change', handleChange)
+      mediaQuery.removeEventListener('change', handleChange)
     }
   }, [query])
 

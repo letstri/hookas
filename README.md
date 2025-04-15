@@ -16,7 +16,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useWindowSize](#usewindowsize) - Track window dimensions
 - [useIsMounted](#useismounted) - Check if the component is mounted
 - [useQuery](#usequery) - Small alternative to `@tanstack/react-query`
-- [useMediaQuery](#usemediaquery) - Check if the user is online
+- [useMediaQuery](#usemediaquery) - Check if the browser matches a media query
 - [useFullscreen](#usefullscreen) - Handle fullscreen mode
 - [useMousePosition](#usemouseposition) - Track the mouse position
 - [useDebouncedFunction](#usedebouncedfunction) - Debounce a function
@@ -259,7 +259,7 @@ npx shadcn@latest add https://hookas.letstri.dev/r/use-query.json
 
 ### useMediaQuery
 
-Check if the user is online.
+Check if the browser matches a media query.
 
 #### Usage
 

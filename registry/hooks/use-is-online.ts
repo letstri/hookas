@@ -14,7 +14,15 @@ export function useIsOnline() {
     }
   }
 
-  const isOnline = React.useSyncExternalStore(onlineSubscriber, () => window.navigator.onLine)
+  const getSnapshot = React.useCallback(() => window.navigator.onLine, [])
+
+  const getServerSnapshot = React.useCallback(() => true, [])
+
+  const isOnline = React.useSyncExternalStore(
+    onlineSubscriber,
+    getSnapshot,
+    getServerSnapshot,
+  )
 
   return isOnline
 }

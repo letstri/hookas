@@ -152,6 +152,7 @@
       "type": "registry:hook",
       "title": "useDebounceState",
       "description": "A hook to debounce a state",
+      "registryDependencies": ["https://hookas.letstri.dev/r/use-debounced-memo.json"],
       "files": [
         {
           "path": "registry/hooks/use-debounced-state.ts",

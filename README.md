@@ -383,7 +383,7 @@ Debounce a state.
 import { useDebouncedState } from '@/hookas/use-debounced-state'
 
 function DebouncedState() {
-  const [state, setState] = useDebouncedState('Hello', 1000)
+  const [debouncedState, state, setState] = useDebouncedState('Hello', 1000)
 }
 ```
 

@@ -3,22 +3,18 @@
 import * as React from 'react'
 
 export function useIsOnline() {
-  const [isOnline, setIsOnline] = React.useState(false)
-
-  React.useEffect(() => {
+  const onlineSubscriber = (cb: () => void) => {
     const abortController = new AbortController()
 
-    window.addEventListener('online', () => setIsOnline(true), {
-      signal: abortController.signal,
-    })
-    window.addEventListener('offline', () => setIsOnline(false), {
-      signal: abortController.signal,
-    })
+    window.addEventListener('online', cb, { signal: abortController.signal })
+    window.addEventListener('offline', cb, { signal: abortController.signal })
 
     return () => {
       abortController.abort()
     }
-  }, [])
+  }
+
+  const isOnline = React.useSyncExternalStore(onlineSubscriber, () => window.navigator.onLine)
 
   return isOnline
 }

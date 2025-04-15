@@ -1,20 +1,18 @@
 'use client'
 
 import * as React from 'react'
+import { useDebouncedCallback } from './use-debounced-callback'
 
-export function useDebouncedMemo<T>(factory: () => T, deps: React.DependencyList, delay = 0): T {
-  const [debouncedValue, setDebouncedValue] = React.useState<T>(() => factory())
-  const value = React.useMemo(() => factory(), deps)
+export function useDebouncedMemo<T>(factory: () => T, deps: React.DependencyList | undefined, delay = 0): T {
+  const [state, setState] = React.useState<T>(() => factory())
+
+  const debouncedSetState = useDebouncedCallback((value: T) => {
+    setState(value)
+  }, delay)
 
   React.useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebouncedValue(value)
-    }, delay)
+    debouncedSetState(factory())
+  }, deps)
 
-    return () => {
-      clearTimeout(timer)
-    }
-  }, [value, delay])
-
-  return debouncedValue
+  return state
 }

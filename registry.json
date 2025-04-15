@@ -138,6 +138,7 @@
       "type": "registry:hook",
       "title": "useDebounceMemo",
       "description": "A hook to debounce a memo",
+      "registryDependencies": ["use-debounced-callback"],
       "files": [
         {
           "path": "registry/hooks/use-debounced-memo.ts",

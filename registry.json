@@ -186,6 +186,19 @@
           "target": "hookas/use-promise.ts"
         }
       ]
+    },
+    {
+      "name": "use-media-controls",
+      "type": "registry:hook",
+      "title": "useMediaControls",
+      "description": "A hook to control media elements",
+      "files": [
+        {
+          "path": "registry/hooks/use-media-controls.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-media-controls.ts"
+        }
+      ]
     }
   ]
 }

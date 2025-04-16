@@ -24,6 +24,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useDebouncedState](#usedebouncedstate) - Manage state with debounced updates
 - [useThrottledCallback](#usethrottledcallback) - Control function execution rate with throttling
 - [usePromise](#usepromise) - Handle promises without `use` hook
+- [useMediaControls](#usemediacontrols) - Control media elements
 
 ### useIsOnline
 
@@ -443,4 +444,47 @@ function PromiseExample() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-promise.json
+```
+
+### useMediaControls
+
+Control media elements.
+
+#### Usage
+
+```tsx
+import { useMediaControls } from '@/hookas/use-media-controls'
+
+function MediaControls() {
+  const mediaRef = useRef<HTMLVideoElement>(null)
+  const {
+    play,
+    pause,
+    toggle,
+    stop,
+    toggleMute,
+    setVolume,
+    setCurrentTime,
+    isPlaying,
+    isMuted,
+    volume,
+    currentTime,
+    duration,
+  } = useMediaControls(mediaRef)
+
+  return (
+    <div>
+      <video ref={mediaRef} src="src/assets/video.mp4" />
+      <button onClick={play}>Play</button>
+      <button onClick={pause}>Pause</button>
+      <button onClick={toggle}>Toggle</button>
+    </div>
+  )
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-media-controls.json
 ```

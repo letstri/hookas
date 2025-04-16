@@ -69,6 +69,32 @@
       ]
     },
     {
+      "name": "use-window-size",
+      "type": "registry:hook",
+      "title": "useWindowSize",
+      "description": "A hook to get the window size",
+      "files": [
+        {
+          "path": "registry/hooks/use-window-size.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-window-size.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-is-mounted",
+      "type": "registry:hook",
+      "title": "useIsMounted",
+      "description": "A hook to check if the component is mounted",
+      "files": [
+        {
+          "path": "registry/hooks/use-is-mounted.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-is-mounted.ts"
+        }
+      ]
+    },
+    {
       "name": "use-query",
       "type": "registry:hook",
       "title": "useQuery",

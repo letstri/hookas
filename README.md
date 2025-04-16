@@ -248,7 +248,7 @@ Small alternative to @tanstack/react-query.
 import { useQuery } from '@/hookas/use-query'
 
 function DataFetcher() {
-  const { data, error, status, refetch } = useQuery({ fetcher: () => fetch('https://api.example.com/data') })
+  const { data, error, status, refetch } = useQuery(() => fetch('https://api.example.com/data'))
 
   return <div>{JSON.stringify(data)}</div>
 }

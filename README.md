@@ -25,6 +25,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useThrottledCallback](#usethrottledcallback) - Control function execution rate with throttling
 - [usePromise](#usepromise) - Handle promises without `use` hook
 - [useMediaControls](#usemediacontrols) - Control media elements
+- [useIsScrolled](#useisscrolled) - Check if an element is scrolled
 
 ### useIsOnline
 
@@ -487,4 +488,27 @@ function MediaControls() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-media-controls.json
+```
+
+### useIsScrolled
+
+Check if an element is scrolled.
+
+#### Usage
+
+```tsx
+import { useIsScrolled } from '@/hookas/use-is-scrolled'
+
+function IsScrolled() {
+  const ref = useRef(null)
+  const isScrolled = useIsScrolled(ref)
+
+  return <div ref={ref}>{isScrolled ? 'Scrolled' : 'Not scrolled'}</div>
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-is-scrolled.json
 ```

@@ -225,6 +225,19 @@
           "target": "hookas/use-media-controls.ts"
         }
       ]
+    },
+    {
+      "name": "use-is-scrolled",
+      "type": "registry:hook",
+      "title": "useIsScrolled",
+      "description": "A hook to check if an element is scrolled",
+      "files": [
+        {
+          "path": "registry/hooks/use-is-scrolled.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-is-scrolled.ts"
+        }
+      ]
     }
   ]
 }

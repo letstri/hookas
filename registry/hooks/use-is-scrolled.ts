@@ -3,7 +3,7 @@
 import * as React from 'react'
 
 export function useIsScrolled(
-  ref: React.RefObject<HTMLElement>,
+  ref: React.RefObject<Element | null>,
   threshold: number = 10,
 ): boolean {
   const [isScrolled, setIsScrolled] = React.useState(false)

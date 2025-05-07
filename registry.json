@@ -238,6 +238,19 @@
           "target": "hookas/use-is-scrolled.ts"
         }
       ]
+    },
+    {
+      "name": "use-interval",
+      "type": "registry:hook",
+      "title": "useInterval",
+      "description": "A hook to execute a function repeatedly with a delay",
+      "files": [
+        {
+          "path": "registry/hooks/use-interval.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-interval.ts"
+        }
+      ]
     }
   ]
 }

@@ -26,6 +26,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [usePromise](#usepromise) - Handle promises without `use` hook
 - [useMediaControls](#usemediacontrols) - Control media elements
 - [useIsScrolled](#useisscrolled) - Check if an element is scrolled
+- [useInterval](#useinterval) - Execute a function repeatedly with a delay
 
 ### useIsOnline
 
@@ -511,4 +512,24 @@ function IsScrolled() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-is-scrolled.json
+```
+
+### useInterval
+
+Execute a function repeatedly with a delay.
+
+#### Usage
+
+```tsx
+import { useInterval } from '@/hookas/use-interval'
+
+function IntervalExample() {
+  useInterval(() => console.log('Hello'), 1000)
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-interval.json
 ```

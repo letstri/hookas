@@ -27,6 +27,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useMediaControls](#usemediacontrols) - Control media elements
 - [useIsScrolled](#useisscrolled) - Check if an element is scrolled
 - [useInterval](#useinterval) - Execute a function repeatedly with a delay
+- [useMountedEffect](#usemountedeffect) - Run an effect only after the component is mounted
 
 ### useIsOnline
 
@@ -532,4 +533,24 @@ function IntervalExample() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-interval.json
+```
+
+### useMountedEffect
+
+Run an effect only after the component is mounted.
+
+#### Usage
+
+```tsx
+import { useMountEffect } from '@/hookas/use-mount-effect'
+
+function MountEffect() {
+  useMountEffect(() => console.log('Hello'), [])
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-mount-effect.json
 ```

@@ -5,7 +5,7 @@ import * as React from 'react'
 export function useIsMounted() {
   const [isMounted, setIsMounted] = React.useState(false)
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     setIsMounted(true)
 
     return () => {

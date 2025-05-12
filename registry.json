@@ -251,6 +251,19 @@
           "target": "hookas/use-interval.ts"
         }
       ]
+    },
+    {
+      "name": "use-mount-effect",
+      "type": "registry:hook",
+      "title": "useMountEffect",
+      "description": "A hook to run an effect only after the component is mounted",
+      "files": [
+        {
+          "path": "registry/hooks/use-mount-effect.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-mount-effect.ts"
+        }
+      ]
     }
   ]
 }

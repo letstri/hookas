@@ -432,7 +432,7 @@ Handle promises without `use` hook.
 import { usePromise } from '@/hookas/use-promise'
 
 function PromiseExample() {
-  const data = usePromise(Promise.resolve([{ name: 'Valerii' }]), [])
+  const data = usePromise(() => Promise.resolve([{ name: 'Valerii' }]), [])
 
   return (
     <div>

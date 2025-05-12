@@ -13,7 +13,7 @@ export function usePromise<T, D extends T>(
 
   useIsomorphicEffect(() => {
     promise.then(setData)
-  }, [promise])
+  }, [])
 
   return data
 }

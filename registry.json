@@ -86,6 +86,7 @@
       "type": "registry:hook",
       "title": "useIsMounted",
       "description": "A hook to check if the component is mounted",
+      "registryDependencies": ["https://hookas.letstri.dev/r/use-isomorphic-effect.json"],
       "files": [
         {
           "path": "registry/hooks/use-is-mounted.ts",

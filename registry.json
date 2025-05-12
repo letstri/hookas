@@ -264,6 +264,20 @@
           "target": "hookas/use-mount-effect.ts"
         }
       ]
+    },
+    {
+      "name": "use-isomorphic-effect",
+      "type": "registry:hook",
+      "title": "useIsomorphicEffect",
+      "description": "A hook to run an effect on the client and server",
+      "registryDependencies": ["https://hookas.letstri.dev/r/use-isomorphic-effect.json"],
+      "files": [
+        {
+          "path": "registry/hooks/use-isomorphic-effect.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-isomorphic-effect.ts"
+        }
+      ]
     }
   ]
 }

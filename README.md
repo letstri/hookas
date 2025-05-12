@@ -28,6 +28,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useIsScrolled](#useisscrolled) - Check if an element is scrolled
 - [useInterval](#useinterval) - Execute a function repeatedly with a delay
 - [useMountEffect](#usemounteffect) - Run an effect only after the component is mounted
+- [useIsomorphicEffect](#useisomorphiceffect) - Run an effect on the client and server
 
 ### useIsOnline
 
@@ -431,7 +432,7 @@ Handle promises without `use` hook.
 import { usePromise } from '@/hookas/use-promise'
 
 function PromiseExample() {
-  const data = usePromise(async () => [{ name: 'Valerii' }], [])
+  const data = usePromise(Promise.resolve([{ name: 'Valerii' }]), [])
 
   return (
     <div>
@@ -553,4 +554,26 @@ function MountEffect() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-mount-effect.json
+```
+
+### useIsomorphicEffect
+
+Run an effect on the client and server.
+
+#### Usage
+
+```tsx
+import { useIsomorphicEffect } from '@/hookas/use-isomorphic-effect'
+
+function IsomorphicEffect() {
+  useIsomorphicEffect(() => {
+    console.log('Hello')
+  }, [])
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-isomorphic-effect.json
 ```

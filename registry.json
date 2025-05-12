@@ -205,6 +205,7 @@
       "type": "registry:hook",
       "title": "usePromise",
       "description": "A hook to handle promises",
+      "registryDependencies": ["https://hookas.letstri.dev/r/use-isomorphic-effect.json"],
       "files": [
         {
           "path": "registry/hooks/use-promise.ts",
@@ -270,7 +271,6 @@
       "type": "registry:hook",
       "title": "useIsomorphicEffect",
       "description": "A hook to run an effect on the client and server",
-      "registryDependencies": ["https://hookas.letstri.dev/r/use-isomorphic-effect.json"],
       "files": [
         {
           "path": "registry/hooks/use-isomorphic-effect.ts",

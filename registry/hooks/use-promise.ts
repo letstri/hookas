@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 import { useIsomorphicEffect } from './use-isomorphic-effect'
 
@@ -13,7 +11,7 @@ export function usePromise<T, D extends T>(
 
   useIsomorphicEffect(() => {
     promiseFn().then(setData)
-  }, [promiseFn])
+  }, [])
 
   return data
 }

@@ -2,7 +2,7 @@
   "name": "hookas",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@10.8.0",
+  "packageManager": "pnpm@10.11.0",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build && pnpm run registry:build",
@@ -13,28 +13,28 @@
     "registry:build": "shadcn build"
   },
   "dependencies": {
-    "next": "15.3.0"
+    "next": "15.3.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.12.0",
-    "@eslint-react/eslint-plugin": "^1.45.3",
+    "@antfu/eslint-config": "^4.13.0",
+    "@eslint-react/eslint-plugin": "^1.49.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9.24.0",
+    "eslint": "^9.26.0",
     "eslint-plugin-format": "^1.0.1",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "happy-dom": "^17.4.4",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "happy-dom": "^17.4.7",
     "jiti": "^2.4.2",
     "postcss": "^8",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "shadcn": "2.4.0",
+    "shadcn": "2.5.0",
     "source-map-support": "^0.5.21",
     "typescript": "^5",
-    "vitest": "^3.1.1"
+    "vitest": "^3.1.3"
   }
 }

@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-export function useMountEffect(
+export function useMountedEffect(
   effect: React.EffectCallback,
   deps?: React.DependencyList,
 ) {

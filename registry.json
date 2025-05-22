@@ -255,15 +255,15 @@
       ]
     },
     {
-      "name": "use-mount-effect",
+      "name": "use-mounted-effect",
       "type": "registry:hook",
-      "title": "useMountEffect",
+      "title": "useMountedEffect",
       "description": "A hook to run an effect only after the component is mounted",
       "files": [
         {
-          "path": "registry/hooks/use-mount-effect.ts",
+          "path": "registry/hooks/use-mounted-effect.ts",
           "type": "registry:hook",
-          "target": "hookas/use-mount-effect.ts"
+          "target": "hookas/use-mounted-effect.ts"
         }
       ]
     },

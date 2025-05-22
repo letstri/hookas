@@ -279,6 +279,32 @@
           "target": "hookas/use-isomorphic-effect.ts"
         }
       ]
+    },
+    {
+      "name": "use-local-storage",
+      "type": "registry:hook",
+      "title": "useLocalStorage",
+      "description": "A hook to store data in the browser's local storage",
+      "files": [
+        {
+          "path": "registry/hooks/use-local-storage.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-local-storage.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-session-storage",
+      "type": "registry:hook",
+      "title": "useSessionStorage",
+      "description": "A hook to store data in the browser's session storage",
+      "files": [
+        {
+          "path": "registry/hooks/use-session-storage.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-session-storage.ts"
+        }
+      ]
     }
   ]
 }

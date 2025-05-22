@@ -29,6 +29,8 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useInterval](#useinterval) - Execute a function repeatedly with a delay
 - [useMountEffect](#usemounteffect) - Run an effect only after the component is mounted
 - [useIsomorphicEffect](#useisomorphiceffect) - Run an effect on the client and server
+- [useLocalStorage](#uselocalstorage) - Store data in the browser's local storage
+- [useSessionStorage](#usesessionstorage) - Store data in the browser's session storage
 
 ### useIsOnline
 
@@ -58,8 +60,8 @@ Run an async effect.
 #### Usage
 
 ```tsx
-import { useAsyncEffect } from '@/hookas/use-async-effect'
 import { useState } from 'react'
+import { useAsyncEffect } from '@/hookas/use-async-effect'
 
 function DataFetcher() {
   const [data, setData] = useState(null)
@@ -87,8 +89,8 @@ Measure the size of an element.
 #### Usage
 
 ```tsx
-import { useElementSize } from '@/hookas/use-element-size'
 import { useRef } from 'react'
+import { useElementSize } from '@/hookas/use-element-size'
 
 function ResizableBox() {
   const ref = useRef(null)
@@ -124,8 +126,8 @@ Handle click outside events.
 #### Usage
 
 ```tsx
-import { useClickOutside } from '@/hookas/use-click-outside'
 import { useRef, useState } from 'react'
+import { useClickOutside } from '@/hookas/use-click-outside'
 
 function DropdownMenu() {
   const [isOpen, setIsOpen] = useState(false)
@@ -220,8 +222,8 @@ Check if the component is mounted.
 #### Usage
 
 ```tsx
-import { useIsMounted } from '@/hookas/use-is-mounted'
 import { useEffect, useState } from 'react'
+import { useIsMounted } from '@/hookas/use-is-mounted'
 
 function MountStatus() {
   const isMounted = useIsMounted()
@@ -576,4 +578,44 @@ function IsomorphicEffect() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-isomorphic-effect.json
+```
+
+### useLocalStorage
+
+Store data in the browser's local storage.
+
+#### Usage
+
+```tsx
+import { useLocalStorage } from '@/hookas/use-local-storage'
+
+function LocalStorageExample() {
+  const [value, setValue] = useLocalStorage('my-key', 'defaultValue')
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-local-storage.json
+```
+
+### useSessionStorage
+
+Store data in the browser's session storage.
+
+#### Usage
+
+```tsx
+import { useSessionStorage } from '@/hookas/use-session-storage'
+
+function SessionStorageExample() {
+  const [value, setValue] = useSessionStorage('my-key', 'defaultValue')
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-session-storage.json
 ```

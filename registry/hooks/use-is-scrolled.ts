@@ -10,12 +10,14 @@ export function useIsScrolled(
 
   React.useEffect(() => {
     const element = ref.current
+
     if (!element)
       return
 
     const handleScroll = () => {
       const scrollTop = element.scrollTop
-      setIsScrolled(scrollTop > threshold)
+      const scrollLeft = element.scrollLeft
+      setIsScrolled(scrollTop > threshold || scrollLeft > threshold)
     }
 
     handleScroll()

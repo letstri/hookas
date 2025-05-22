@@ -305,6 +305,19 @@
           "target": "hookas/use-session-storage.ts"
         }
       ]
+    },
+    {
+      "name": "use-scroll-direction",
+      "type": "registry:hook",
+      "title": "useScrollDirection",
+      "description": "A hook to track the scroll direction",
+      "files": [
+        {
+          "path": "registry/hooks/use-scroll-direction.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-scroll-direction.ts"
+        }
+      ]
     }
   ]
 }

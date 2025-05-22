@@ -31,6 +31,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useIsomorphicEffect](#useisomorphiceffect) - Run an effect on the client and server
 - [useLocalStorage](#uselocalstorage) - Store data in the browser's local storage
 - [useSessionStorage](#usesessionstorage) - Store data in the browser's session storage
+- [useScrollDirection](#usescrolldirection) - Track the scroll direction
 
 ### useIsOnline
 
@@ -618,4 +619,18 @@ function SessionStorageExample() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-session-storage.json
+```
+
+### useScrollDirection
+
+Track the scroll direction.
+
+#### Usage
+
+```tsx
+import { useScrollDirection } from '@/hookas/use-scroll-direction'
+
+function ScrollDirection() {
+  const direction = useScrollDirection()
+}
 ```

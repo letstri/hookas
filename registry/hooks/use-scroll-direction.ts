@@ -4,7 +4,7 @@ import * as React from 'react'
 
 type ScrollDirection = 'up' | 'down' | 'left' | 'right' | null
 
-export function useScrollDirection(ref?: React.RefObject<HTMLElement | null>, delay = 1000) {
+export function useScrollDirection(ref?: React.RefObject<HTMLElement | null>, delay = 500) {
   const [scrollDirection, setScrollDirection] = React.useState<ScrollDirection>(null)
   const lastScrollRef = React.useRef({ y: 0, x: 0 })
   const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)

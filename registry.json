@@ -318,6 +318,19 @@
           "target": "hookas/use-scroll-direction.ts"
         }
       ]
+    },
+    {
+      "name": "use-is-in-viewport",
+      "type": "registry:hook",
+      "title": "useIsInViewport",
+      "description": "A hook to check if an element is in the viewport",
+      "files": [
+        {
+          "path": "registry/hooks/use-is-in-viewport.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-is-in-viewport.ts"
+        }
+      ]
     }
   ]
 }

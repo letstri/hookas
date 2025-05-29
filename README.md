@@ -32,6 +32,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useLocalStorage](#uselocalstorage) - Store data in the browser's local storage
 - [useSessionStorage](#usesessionstorage) - Store data in the browser's session storage
 - [useScrollDirection](#usescrolldirection) - Track the scroll direction
+- [useIsInViewport](#useisinviewport) - Check if an element is in the viewport
 
 ### useIsOnline
 
@@ -633,4 +634,33 @@ import { useScrollDirection } from '@/hookas/use-scroll-direction'
 function ScrollDirection() {
   const direction = useScrollDirection()
 }
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-scroll-direction.json
+```
+
+### useIsInViewport
+
+Check if an element is visible.
+
+#### Usage
+
+```tsx
+import { useIsInViewport } from '@/hookas/use-is-in-viewport'
+
+function IsInViewport() {
+  const ref = useRef(null)
+  const isInViewport = useIsInViewport(ref)
+
+  return <div ref={ref}>{isInViewport ? 'In viewport' : 'Not in viewport'}</div>
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-is-in-viewport.json
 ```

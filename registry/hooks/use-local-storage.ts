@@ -3,7 +3,7 @@
 import * as React from 'react'
 
 export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
-  const readValue = () => {
+  const readValue = React.useCallback(() => {
     const initial = typeof initialValue === 'function' ? (initialValue as () => T)() : initialValue
 
     if (typeof window === 'undefined') {
@@ -18,11 +18,11 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
       console.warn(`Error reading localStorage key "${key}":`, error)
       return initial
     }
-  }
+  }, [key, initialValue])
 
   const [storedValue, setStoredValue] = React.useState<T>(readValue)
 
-  const setValue = (value: T | ((val: T) => T)) => {
+  const setValue = React.useCallback((value: T | ((val: T) => T)) => {
     try {
       const valueToStore
         = typeof value === 'function' ? (value as (val: T) => T)(storedValue) : value
@@ -37,7 +37,11 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
     catch (error) {
       console.warn(`Error setting localStorage key "${key}":`, error)
     }
-  }
+  }, [key, storedValue])
+
+  React.useEffect(() => {
+    setStoredValue(readValue())
+  }, [key, readValue])
 
   React.useEffect(() => {
     const abortController = new AbortController()
@@ -49,7 +53,7 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
     return () => {
       abortController.abort()
     }
-  }, [])
+  }, [readValue])
 
   return [storedValue, setValue] as const
 }

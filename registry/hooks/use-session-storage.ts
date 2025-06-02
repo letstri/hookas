@@ -2,22 +2,26 @@
 
 import * as React from 'react'
 
+export function getSessionStorageValue<T>(key: string, defaultValue: T): T {
+  if (typeof window === 'undefined') {
+    return defaultValue
+  }
+
+  try {
+    const item = window.sessionStorage.getItem(key)
+    return item ? (JSON.parse(item) as T) : defaultValue
+  }
+  catch (error) {
+    console.warn(`Error reading sessionStorage key "${key}":`, error)
+    return defaultValue
+  }
+}
+
 export function useSessionStorage<T>(key: string, initialValue: T | (() => T)) {
   const readValue = React.useCallback(() => {
     const initial = typeof initialValue === 'function' ? (initialValue as () => T)() : initialValue
 
-    if (typeof window === 'undefined') {
-      return initial
-    }
-
-    try {
-      const item = window.sessionStorage.getItem(key)
-      return item ? (JSON.parse(item) as T) : initial
-    }
-    catch (error) {
-      console.warn(`Error reading sessionStorage key "${key}":`, error)
-      return initial
-    }
+    return getSessionStorageValue(key, initial)
   }, [key, initialValue])
 
   const [storedValue, setStoredValue] = React.useState<T>(readValue)

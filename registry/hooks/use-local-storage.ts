@@ -27,7 +27,6 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
       const valueToStore
         = typeof value === 'function' ? (value as (val: T) => T)(storedValue) : value
 
-      // Save state
       setStoredValue(valueToStore)
 
       if (typeof window !== 'undefined') {

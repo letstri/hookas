@@ -22,7 +22,7 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
     const initial = typeof initialValue === 'function' ? (initialValue as () => T)() : initialValue
 
     return getLocalStorageValue(key, initial)
-  }, [key, initialValue])
+  }, [key])
 
   const [storedValue, setStoredValue] = React.useState<T>(readValue)
 

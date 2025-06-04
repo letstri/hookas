@@ -331,6 +331,33 @@
           "target": "hookas/use-is-in-viewport.ts"
         }
       ]
+    },
+    {
+      "name": "use-initialized-effect",
+      "type": "registry:hook",
+      "title": "useInitializedEffect",
+      "description": "A hook to run an effect only after all dependencies are not undefined",
+      "files": [
+        {
+          "path": "registry/hooks/use-initialized-effect.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-initialized-effect.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-initialized-effect-once",
+      "type": "registry:hook",
+      "title": "useInitializedEffectOnce",
+      "description": "A hook to run an effect only once after all dependencies are not undefined",
+      "registryDependencies": ["https://hookas.letstri.dev/r/use-initialized-effect.json"],
+      "files": [
+        {
+          "path": "registry/hooks/use-initialized-effect-once.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-initialized-effect-once.ts"
+        }
+      ]
     }
   ]
 }

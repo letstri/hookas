@@ -33,6 +33,8 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useSessionStorage](#usesessionstorage) - Store data in the browser's session storage
 - [useScrollDirection](#usescrolldirection) - Track the scroll direction
 - [useIsInViewport](#useisinviewport) - Check if an element is in the viewport
+- [useInitializedEffect](#useinitializedeffect) - Run an effect only after all dependencies are not undefined
+- [useInitializedEffectOnce](#useinitializedeffectonce) - Run an effect only once after all dependencies are not undefined
 
 ### useIsOnline
 
@@ -663,4 +665,50 @@ function IsInViewport() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-is-in-viewport.json
+```
+
+### useInitializedEffect
+
+Run an effect only after all dependencies are not undefined.
+
+#### Usage
+
+```tsx
+import { useInitializedEffect } from '@/hookas/use-initialized-effect'
+
+function InitializedEffect() {
+  // This will run only once after the dependencies are not undefined
+  useInitializedEffect(() => {
+    console.log('Hello')
+  }, [1, 2, 3])
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-initialized-effect.json
+```
+
+### useInitializedEffectOnce
+
+Run an effect only once after all dependencies are not undefined.
+
+#### Usage
+
+```tsx
+import { useInitializedEffectOnce } from '@/hookas/use-initialized-effect-once'
+
+function InitializedEffectOnce() {
+  // This will run only once after the dependencies are not undefined
+  useInitializedEffectOnce(() => {
+    console.log('Hello')
+  }, [1, 2, 3])
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-initialized-effect-once.json
 ```

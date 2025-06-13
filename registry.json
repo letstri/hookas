@@ -358,6 +358,19 @@
           "target": "hookas/use-initialized-effect-once.ts"
         }
       ]
+    },
+    {
+      "name": "use-timeout-effect",
+      "type": "registry:hook",
+      "title": "useTimeoutEffect",
+      "description": "A hook to run an effect after a timeout",
+      "files": [
+        {
+          "path": "registry/hooks/use-timeout-effect.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-timeout-effect.ts"
+        }
+      ]
     }
   ]
 }

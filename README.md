@@ -35,6 +35,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useIsInViewport](#useisinviewport) - Check if an element is in the viewport
 - [useInitializedEffect](#useinitializedeffect) - Run an effect only after all dependencies are not undefined
 - [useInitializedEffectOnce](#useinitializedeffectonce) - Run an effect only once after all dependencies are not undefined
+- [useTimeoutEffect](#usetimeouteffect) - Run an effect after a timeout
 
 ### useIsOnline
 
@@ -711,4 +712,26 @@ function InitializedEffectOnce() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-initialized-effect-once.json
+```
+
+### useTimeoutEffect
+
+Run an effect after a timeout.
+
+#### Usage
+
+```tsx
+import { useTimeoutEffect } from '@/hookas/use-timeout-effect'
+
+function TimeoutEffect() {
+  useTimeoutEffect(() => {
+    console.log('Hello')
+  }, 1000)
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-timeout-effect.json
 ```

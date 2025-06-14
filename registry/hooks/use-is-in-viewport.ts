@@ -2,18 +2,10 @@
 
 import * as React from 'react'
 
-export function useIsInViewport(ref: React.RefObject<HTMLElement | null>, {
-  threshold = 0,
-  root = null,
-  rootMargin = '0px',
-}: {
-  threshold?: number | number[]
-  root?: Element | null
-  rootMargin?: string
-} = {}) {
+export function useInViewport(ref: React.RefObject<HTMLElement | null>, visibility: 'full' | 'partial' | number = 'partial') {
   const [isVisible, setIsVisible] = React.useState(false)
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (!ref.current)
       return
 
@@ -22,9 +14,7 @@ export function useIsInViewport(ref: React.RefObject<HTMLElement | null>, {
         setIsVisible(entry.isIntersecting)
       },
       {
-        threshold,
-        root,
-        rootMargin,
+        threshold: typeof visibility === 'number' ? visibility : visibility === 'full' ? 1 : 0,
       },
     )
 
@@ -33,7 +23,7 @@ export function useIsInViewport(ref: React.RefObject<HTMLElement | null>, {
     return () => {
       observer.disconnect()
     }
-  }, [ref, threshold, root, rootMargin])
+  }, [ref, visibility])
 
   return isVisible
 }

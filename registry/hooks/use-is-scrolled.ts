@@ -3,13 +3,13 @@
 import * as React from 'react'
 
 export function useIsScrolled(
-  ref: React.RefObject<Element | null>,
-  threshold: number = 10,
+  ref?: React.RefObject<Element | null>,
+  threshold = 10,
 ): boolean {
   const [isScrolled, setIsScrolled] = React.useState(false)
 
   React.useEffect(() => {
-    const element = ref.current
+    const element = ref ? ref.current : window.document.documentElement
 
     if (!element)
       return
@@ -17,6 +17,7 @@ export function useIsScrolled(
     const handleScroll = () => {
       const scrollTop = element.scrollTop
       const scrollLeft = element.scrollLeft
+
       setIsScrolled(scrollTop > threshold || scrollLeft > threshold)
     }
 

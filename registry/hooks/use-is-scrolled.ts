@@ -3,13 +3,13 @@
 import * as React from 'react'
 
 export function useIsScrolled(
-  ref?: React.RefObject<Element | null>,
+  ref?: React.RefObject<Element | null> | Element,
   threshold = 10,
 ): boolean {
   const [isScrolled, setIsScrolled] = React.useState(false)
 
   React.useEffect(() => {
-    const element = ref ? ref.current : window.document.documentElement
+    const element = ref ? 'current' in ref ? ref.current : ref : window.document.documentElement
 
     if (!element)
       return
@@ -32,3 +32,4 @@ export function useIsScrolled(
 
   return isScrolled
 }
+

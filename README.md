@@ -33,6 +33,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useSessionStorage](#usesessionstorage) - Store data in the browser's session storage
 - [useScrollDirection](#usescrolldirection) - Track the scroll direction
 - [useIsInViewport](#useisinviewport) - Check if an element is in the viewport
+- [useIsWindowScrolled](#useiswindowscrolled) - Check if the window is scrolled
 - [useInitializedEffect](#useinitializedeffect) - Run an effect only after all dependencies are not undefined
 - [useInitializedEffectOnce](#useinitializedeffectonce) - Run an effect only once after all dependencies are not undefined
 - [useTimeoutEffect](#usetimeouteffect) - Run an effect after a timeout
@@ -666,6 +667,26 @@ function IsInViewport() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-is-in-viewport.json
+```
+
+### useIsWindowScrolled
+
+Check if the window is scrolled.
+
+#### Usage
+
+```tsx
+import { useIsWindowScrolled } from '@/hookas/use-is-window-scrolled'
+
+function IsWindowScrolled() {
+  const isScrolled = useIsWindowScrolled()
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-is-window-scrolled.json
 ```
 
 ### useInitializedEffect

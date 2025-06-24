@@ -333,6 +333,19 @@
       ]
     },
     {
+      "name": "use-is-window-scrolled",
+      "type": "registry:hook",
+      "title": "useIsWindowScrolled",
+      "description": "A hook to check if the window is scrolled",
+      "files": [
+        {
+          "path": "registry/hooks/use-is-window-scrolled.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-is-window-scrolled.ts"
+        }
+      ]
+    },
+    {
       "name": "use-initialized-effect",
       "type": "registry:hook",
       "title": "useInitializedEffect",

@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-export function useInViewport(ref: React.RefObject<HTMLElement | null>, visibility: 'full' | 'partial' | number = 'partial') {
+export function useInViewport(ref: React.RefObject<Element | null>, visibility: 'full' | 'partial' | number = 'partial') {
   const [isVisible, setIsVisible] = React.useState(false)
 
   React.useLayoutEffect(() => {

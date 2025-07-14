@@ -2,33 +2,27 @@
 
 import * as React from 'react'
 
-export function useIsScrolled(
-  ref: React.RefObject<Element | null>,
+export function useIsWindowScrolled(
   { threshold = 10, initial = false }: { threshold?: number, initial?: boolean } = {},
 ) {
   const [isScrolled, setIsScrolled] = React.useState(initial)
 
   React.useLayoutEffect(() => {
-    const element = ref.current
-
-    if (!element)
-      return
-
     const handleScroll = () => {
-      const scrollTop = element.scrollTop
-      const scrollLeft = element.scrollLeft
+      const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0
+      const scrollLeft = window.scrollX || window.pageXOffset || document.documentElement.scrollLeft || 0
 
       setIsScrolled(scrollTop > threshold || scrollLeft > threshold)
     }
 
     handleScroll()
 
-    element.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
-      element.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', handleScroll)
     }
-  }, [ref, threshold])
+  }, [threshold])
 
   return isScrolled
 }

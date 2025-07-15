@@ -4,6 +4,7 @@ import * as React from 'react'
 
 export function useThrottledCallback<T extends (...args: any[]) => any>(
   fn: T,
+  deps: React.DependencyList,
   delay = 0,
 ): (...args: Parameters<T>) => void {
   const lastExecutedRef = React.useRef(0)
@@ -35,7 +36,7 @@ export function useThrottledCallback<T extends (...args: any[]) => any>(
         }, remaining)
       }
     },
-    [fn, delay],
+    [fn, delay, ...deps],
   )
 
   React.useEffect(() => () => {

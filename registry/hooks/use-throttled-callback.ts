@@ -5,7 +5,7 @@ import * as React from 'react'
 export function useThrottledCallback<T extends (...args: any[]) => any>(
   fn: T,
   deps: React.DependencyList,
-  delay = 0,
+  delay: number,
 ): (...args: Parameters<T>) => void {
   const lastExecutedRef = React.useRef(0)
   const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)

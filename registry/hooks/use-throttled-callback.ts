@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-export function useThrottledFunction<T extends (...args: any[]) => any>(
+export function useThrottledCallback<T extends (...args: any[]) => any>(
   fn: T,
   delay = 0,
 ): (...args: Parameters<T>) => void {
@@ -24,7 +24,8 @@ export function useThrottledFunction<T extends (...args: any[]) => any>(
         }
         lastExecutedRef.current = now
         fn(...args)
-      } else if (!timerRef.current) {
+      }
+      else if (!timerRef.current) {
         timerRef.current = setTimeout(() => {
           lastExecutedRef.current = Date.now()
           timerRef.current = null

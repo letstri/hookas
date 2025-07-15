@@ -35,7 +35,7 @@ export function useWindowSize(): WindowSize {
   const windowSize = React.useSyncExternalStore(
     windowSizeSubscriber,
     getSnapshot,
-    getServerSnapshot
+    getServerSnapshot,
   )
 
   return windowSize

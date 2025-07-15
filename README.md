@@ -37,6 +37,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useInitializedEffect](#useinitializedeffect) - Run an effect only after all dependencies are not undefined
 - [useInitializedEffectOnce](#useinitializedeffectonce) - Run an effect only once after all dependencies are not undefined
 - [useTimeoutEffect](#usetimeouteffect) - Run an effect after a timeout
+- [useScrollInfo](#usescrollinfo) - Get the scroll info of an element
 
 ### useIsOnline
 
@@ -755,4 +756,37 @@ function TimeoutEffect() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-timeout-effect.json
+```
+
+### useScrollInfo
+
+Get the scroll info of an element.
+
+#### Usage
+
+```tsx
+import { useScrollInfo } from '@/hookas/use-scroll-info'
+
+function ScrollInfo() {
+  const ref = useRef(null)
+  const { left, top, right, bottom } = useScrollInfo(ref)
+
+  return (
+    <div ref={ref}>
+      {left}
+      {' '}
+      {top}
+      {' '}
+      {right}
+      {' '}
+      {bottom}
+    </div>
+  )
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-scroll-info.json
 ```

@@ -384,6 +384,19 @@
           "target": "hookas/use-timeout-effect.ts"
         }
       ]
+    },
+    {
+      "name": "use-scroll-info",
+      "type": "registry:hook",
+      "title": "useScrollInfo",
+      "description": "A hook to get the scroll info of an element",
+      "files": [
+        {
+          "path": "registry/hooks/use-scroll-info.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-scroll-info.ts"
+        }
+      ]
     }
   ]
 }

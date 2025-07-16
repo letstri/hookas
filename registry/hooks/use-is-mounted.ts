@@ -1,12 +1,11 @@
 'use client'
 
 import * as React from 'react'
-import { useIsomorphicEffect } from './use-isomorphic-effect'
 
 export function useIsMounted() {
   const [isMounted, setIsMounted] = React.useState(false)
 
-  useIsomorphicEffect(() => {
+  React.useEffect(() => {
     setIsMounted(true)
 
     return () => {

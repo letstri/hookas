@@ -7,7 +7,7 @@ export function useIsWindowScrolled(
 ) {
   const [isScrolled, setIsScrolled] = React.useState(initial)
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0
       const scrollLeft = window.scrollX || window.pageXOffset || document.documentElement.scrollLeft || 0

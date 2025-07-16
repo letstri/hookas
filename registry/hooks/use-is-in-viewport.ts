@@ -5,7 +5,7 @@ import * as React from 'react'
 export function useIsInViewport(ref: React.RefObject<Element | null>, visibility: 'full' | 'partial' | number = 'partial') {
   const [isVisible, setIsVisible] = React.useState(false)
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (!ref.current)
       return
 

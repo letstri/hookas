@@ -14,7 +14,7 @@ export function useIsScrolled(
 ) {
   const [isScrolled, setIsScrolled] = React.useState(initial)
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     const element = ref.current
 
     if (!element)

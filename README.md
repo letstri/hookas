@@ -9,6 +9,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 ## Hooks
 
 ### State & Effects
+
 - [useToggle](#usetoggle) - Manage boolean state with a convenient toggle function
 - [useDebouncedState](#usedebouncedstate) - Manage state with debounced updates
 - [useDebouncedMemo](#usedebouncedmemo) - Debounce expensive computations
@@ -25,21 +26,25 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useAsyncEffect](#useasynceffect) - Handle asynchronous operations in React effects
 
 ### Data & Storage
+
 - [useQuery](#usequery) - Lightweight data fetching solution
 - [useLocalStorage](#uselocalstorage) - Store data in the browser's local storage
 - [useSessionStorage](#usesessionstorage) - Store data in the browser's session storage
 
 ### Media & UI
+
 - [useMediaQuery](#usemediaquery) - Reactively respond to CSS media queries
 - [useFullscreen](#usefullscreen) - Control fullscreen mode
 - [useMediaControls](#usemediacontrols) - Control media elements
 
 ### DOM & Events
+
 - [useClickOutside](#useclickoutside) - Detect and handle clicks outside specified elements
 - [useElementSize](#useelementsize) - Track and respond to element dimensions with ResizeObserver
 - [useMousePosition](#usemouseposition) - Track mouse coordinates
 
 ### Scroll & Viewport
+
 - [useWindowSize](#usewindowsize) - Monitor window dimensions
 - [useIsScrolled](#useisscrolled) - Check if an element is scrolled
 - [useScrollDirection](#usescrolldirection) - Track the scroll direction
@@ -48,6 +53,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useScrollInfo](#usescrollinfo) - Get the scroll info of an element
 
 ### Network
+
 - [useIsOnline](#useisonline) - Monitor network connectivity status with automatic reconnection handling
 
 ### useIsOnline

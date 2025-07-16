@@ -8,36 +8,47 @@ Find the hook you want to use and copy the link to install the hook into your pr
 
 ## Hooks
 
-- [useIsOnline](#useisonline) - Monitor network connectivity status with automatic reconnection handling
-- [useAsyncEffect](#useasynceffect) - Handle asynchronous operations in React effects
-- [useElementSize](#useelementsize) - Track and respond to element dimensions with ResizeObserver
-- [useClickOutside](#useclickoutside) - Detect and handle clicks outside specified elements
+### State & Effects
 - [useToggle](#usetoggle) - Manage boolean state with a convenient toggle function
-- [useWindowSize](#usewindowsize) - Monitor window dimensions
-- [useIsMounted](#useismounted) - Check if the component is mounted
-- [useQuery](#usequery) - Lightweight data fetching solution
-- [useMediaQuery](#usemediaquery) - Reactively respond to CSS media queries
-- [useFullscreen](#usefullscreen) - Control fullscreen mode
-- [useMousePosition](#usemouseposition) - Track mouse coordinates
-- [useDebouncedCallback](#usedebouncedcallback) - Optimize performance by debouncing function calls
-- [useDebouncedMemo](#usedebouncedmemo) - Debounce expensive computations
 - [useDebouncedState](#usedebouncedstate) - Manage state with debounced updates
+- [useDebouncedMemo](#usedebouncedmemo) - Debounce expensive computations
+- [useDebouncedCallback](#usedebouncedcallback) - Optimize performance by debouncing function calls
 - [useThrottledCallback](#usethrottledcallback) - Control function execution rate with throttling
-- [usePromise](#usepromise) - Handle promises without `use` hook
-- [useMediaControls](#usemediacontrols) - Control media elements
-- [useIsScrolled](#useisscrolled) - Check if an element is scrolled
 - [useInterval](#useinterval) - Execute a function repeatedly with a delay
+- [useTimeoutEffect](#usetimeouteffect) - Run an effect after a timeout
 - [useMountedEffect](#usemountedeffect) - Run an effect only after the component is mounted
+- [useIsMounted](#useismounted) - Check if the component is mounted
 - [useIsomorphicEffect](#useisomorphiceffect) - Run an effect on the client and server
+- [useInitializedEffect](#useinitializedeffect) - Run an effect only after all dependencies are not undefined
+- [useInitializedEffectOnce](#useinitializedeffectonce) - Run an effect only once after all dependencies are not undefined
+- [usePromise](#usepromise) - Handle promises without `use` hook
+- [useAsyncEffect](#useasynceffect) - Handle asynchronous operations in React effects
+
+### Data & Storage
+- [useQuery](#usequery) - Lightweight data fetching solution
 - [useLocalStorage](#uselocalstorage) - Store data in the browser's local storage
 - [useSessionStorage](#usesessionstorage) - Store data in the browser's session storage
+
+### Media & UI
+- [useMediaQuery](#usemediaquery) - Reactively respond to CSS media queries
+- [useFullscreen](#usefullscreen) - Control fullscreen mode
+- [useMediaControls](#usemediacontrols) - Control media elements
+
+### DOM & Events
+- [useClickOutside](#useclickoutside) - Detect and handle clicks outside specified elements
+- [useElementSize](#useelementsize) - Track and respond to element dimensions with ResizeObserver
+- [useMousePosition](#usemouseposition) - Track mouse coordinates
+
+### Scroll & Viewport
+- [useWindowSize](#usewindowsize) - Monitor window dimensions
+- [useIsScrolled](#useisscrolled) - Check if an element is scrolled
 - [useScrollDirection](#usescrolldirection) - Track the scroll direction
 - [useIsInViewport](#useisinviewport) - Check if an element is in the viewport
 - [useIsWindowScrolled](#useiswindowscrolled) - Check if the window is scrolled
-- [useInitializedEffect](#useinitializedeffect) - Run an effect only after all dependencies are not undefined
-- [useInitializedEffectOnce](#useinitializedeffectonce) - Run an effect only once after all dependencies are not undefined
-- [useTimeoutEffect](#usetimeouteffect) - Run an effect after a timeout
 - [useScrollInfo](#usescrollinfo) - Get the scroll info of an element
+
+### Network
+- [useIsOnline](#useisonline) - Monitor network connectivity status with automatic reconnection handling
 
 ### useIsOnline
 

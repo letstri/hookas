@@ -10,51 +10,51 @@ Find the hook you want to use and copy the link to install the hook into your pr
 
 ### State & Effects
 
-- [useToggle](#usetoggle) - Manage boolean state with a convenient toggle function
+- [useToggle](#usetoggle) - Manage boolean state with a toggle function
 - [useDebouncedState](#usedebouncedstate) - Manage state with debounced updates
 - [useDebouncedMemo](#usedebouncedmemo) - Debounce expensive computations
-- [useDebouncedCallback](#usedebouncedcallback) - Optimize performance by debouncing function calls
-- [useThrottledCallback](#usethrottledcallback) - Control function execution rate with throttling
-- [useInterval](#useinterval) - Execute a function repeatedly with a delay
+- [useDebouncedCallback](#usedebouncedcallback) - Debounce function calls for performance
+- [useThrottledCallback](#usethrottledcallback) - Throttle function calls to control execution rate
+- [useInterval](#useinterval) - Run a function repeatedly with a delay
 - [useTimeoutEffect](#usetimeouteffect) - Run an effect after a timeout
-- [useMountedEffect](#usemountedeffect) - Run an effect only after the component is mounted
+- [useMountedEffect](#usemountedeffect) - Run an effect after the component is mounted
 - [useIsMounted](#useismounted) - Check if the component is mounted
-- [useIsomorphicEffect](#useisomorphiceffect) - Run an effect on the client and server
-- [useInitializedEffect](#useinitializedeffect) - Run an effect only after all dependencies are not undefined
-- [useInitializedEffectOnce](#useinitializedeffectonce) - Run an effect only once after all dependencies are not undefined
-- [usePromise](#usepromise) - Handle promises without `use` hook
-- [useAsyncEffect](#useasynceffect) - Handle asynchronous operations in React effects
+- [useIsomorphicEffect](#useisomorphiceffect) - Run an effect on both client and server
+- [useInitializedEffect](#useinitializedeffect) - Run an effect only after all dependencies are defined
+- [useInitializedEffectOnce](#useinitializedeffectonce) - Run an effect only once after all dependencies are defined
+- [usePromise](#usepromise) - Handle promises without the `use` hook
+- [useAsyncEffect](#useasynceffect) - Run asynchronous operations in React effects
 
 ### Data & Storage
 
-- [useQuery](#usequery) - Lightweight data fetching solution
-- [useLocalStorage](#uselocalstorage) - Store data in the browser's local storage
-- [useSessionStorage](#usesessionstorage) - Store data in the browser's session storage
+- [useQuery](#usequery) - Fetch data with a lightweight query hook
+- [useLocalStorage](#uselocalstorage) - Store data in local storage
+- [useSessionStorage](#usesessionstorage) - Store data in session storage
 
 ### Media & UI
 
-- [useMediaQuery](#usemediaquery) - Reactively respond to CSS media queries
+- [useMediaQuery](#usemediaquery) - Respond to CSS media queries
 - [useFullscreen](#usefullscreen) - Control fullscreen mode
 - [useMediaControls](#usemediacontrols) - Control media elements
 
 ### DOM & Events
 
-- [useClickOutside](#useclickoutside) - Detect and handle clicks outside specified elements
-- [useElementSize](#useelementsize) - Track and respond to element dimensions with ResizeObserver
-- [useMousePosition](#usemouseposition) - Track mouse coordinates
+- [useClickOutside](#useclickoutside) - Detect clicks outside specified elements
+- [useElementSize](#useelementsize) - Track element size with ResizeObserver
+- [useWindowSize](#usewindowsize) - Track window size
+- [useMousePosition](#usemouseposition) - Track mouse position
 
 ### Scroll & Viewport
 
-- [useWindowSize](#usewindowsize) - Monitor window dimensions
 - [useIsScrolled](#useisscrolled) - Check if an element is scrolled
-- [useScrollDirection](#usescrolldirection) - Track the scroll direction
+- [useScrollDirection](#usescrolldirection) - Track scroll direction
 - [useIsInViewport](#useisinviewport) - Check if an element is in the viewport
 - [useIsWindowScrolled](#useiswindowscrolled) - Check if the window is scrolled
-- [useScrollInfo](#usescrollinfo) - Get the scroll info of an element
+- [useScrollInfo](#usescrollinfo) - Get scroll information for an element
 
 ### Network
 
-- [useIsOnline](#useisonline) - Monitor network connectivity status with automatic reconnection handling
+- [useIsOnline](#useisonline) - Check if the user is online
 
 ### useIsOnline
 

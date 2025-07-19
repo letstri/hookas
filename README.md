@@ -56,6 +56,10 @@ Find the hook you want to use and copy the link to install the hook into your pr
 
 - [useIsOnline](#useisonline) - Check if the user is online
 
+### Date & Time
+
+- [useDateFormat](#usedateformat) - Format dates with customizable patterns and locales
+
 ### useIsOnline
 
 Check if the user is online.
@@ -806,4 +810,143 @@ function ScrollInfo() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-scroll-info.json
+```
+
+### useDateFormat
+
+Format dates with customizable patterns and locales. Supports a wide range of format tokens for year, month, day, hour, minute, second, millisecond, meridiem, weekday, and timezone formatting.
+
+#### Usage
+
+```tsx
+import { useDateFormat } from '@/hookas/use-date-format'
+
+function DateDisplay() {
+  const date = new Date()
+
+  // Basic formatting
+  const formattedTime = useDateFormat(date, 'HH:mm:ss')
+  const formattedDate = useDateFormat(date, 'YYYY-MM-DD')
+  const fullFormat = useDateFormat(date, 'dddd, MMMM Do, YYYY [at] h:mm A')
+
+  return (
+    <div>
+      <p>Time: {formattedTime}</p>
+      <p>Date: {formattedDate}</p>
+      <p>Full: {fullFormat}</p>
+    </div>
+  )
+}
+
+// With custom locale
+function LocalizedDate() {
+  const date = new Date()
+  const frenchDate = useDateFormat(date, 'dddd, DD MMMM YYYY', {
+    locales: 'fr-FR'
+  })
+
+  return <p>{frenchDate}</p>
+}
+
+// With custom meridiem
+function CustomMeridiem() {
+  const date = new Date()
+  const customTime = useDateFormat(date, 'h:mm a', {
+    customMeridiem: (hours, minutes, isLowercase) => {
+      const period = hours < 12 ? 'Morning' : 'Evening'
+      return isLowercase ? period.toLowerCase() : period
+    }
+  })
+
+  return <p>{customTime}</p>
+}
+
+// Dynamic date formatting
+function DynamicFormat() {
+  const [format, setFormat] = useState('YYYY-MM-DD')
+  const [date] = useState(new Date())
+
+  const formatted = useDateFormat(date, format)
+
+  return (
+    <div>
+      <select value={format} onChange={(e) => setFormat(e.target.value)}>
+        <option value="YYYY-MM-DD">ISO Date</option>
+        <option value="MM/DD/YYYY">US Format</option>
+        <option value="DD/MM/YYYY">EU Format</option>
+        <option value="dddd, MMMM Do, YYYY">Full Date</option>
+        <option value="h:mm:ss A">12-hour Time</option>
+        <option value="HH:mm:ss">24-hour Time</option>
+      </select>
+      <p>Formatted: {formatted}</p>
+    </div>
+  )
+}
+```
+
+#### Format Tokens
+
+The hook supports a comprehensive set of format tokens:
+
+**Year:**
+- `YYYY` - 4-digit year (2024)
+- `YY` - 2-digit year (24)
+- `Yo` - Ordinal year (2024th)
+
+**Month:**
+- `M` - Month number (1-12)
+- `MM` - Zero-padded month (01-12)
+- `MMM` - Short month name (Jan, Feb, Mar)
+- `MMMM` - Full month name (January, February, March)
+- `Mo` - Ordinal month (1st, 2nd, 3rd)
+
+**Day:**
+- `D` - Day of month (1-31)
+- `DD` - Zero-padded day (01-31)
+- `Do` - Ordinal day (1st, 2nd, 3rd)
+
+**Weekday:**
+- `d` - Day of week number (0-6, Sunday=0)
+- `dd` - Narrow weekday name (S, M, T)
+- `ddd` - Short weekday name (Sun, Mon, Tue)
+- `dddd` - Full weekday name (Sunday, Monday, Tuesday)
+
+**Hour:**
+- `H` - 24-hour format (0-23)
+- `HH` - Zero-padded 24-hour (00-23)
+- `h` - 12-hour format (1-12)
+- `hh` - Zero-padded 12-hour (01-12)
+- `Ho` - Ordinal 24-hour (0th, 1st, 2nd)
+- `ho` - Ordinal 12-hour (12th, 1st, 2nd)
+
+**Minute:**
+- `m` - Minutes (0-59)
+- `mm` - Zero-padded minutes (00-59)
+- `mo` - Ordinal minutes (0th, 1st, 2nd)
+
+**Second:**
+- `s` - Seconds (0-59)
+- `ss` - Zero-padded seconds (00-59)
+- `so` - Ordinal seconds (0th, 1st, 2nd)
+
+**Millisecond:**
+- `SSS` - Zero-padded milliseconds (000-999)
+
+**Meridiem:**
+- `A` - Uppercase meridiem (AM, PM)
+- `AA` - Uppercase with periods (A.M., P.M.)
+- `a` - Lowercase meridiem (am, pm)
+- `aa` - Lowercase with periods (a.m., p.m.)
+
+**Timezone:**
+- `z`, `zz`, `zzz` - Short timezone offset (+05:30)
+- `zzzz` - Long timezone offset (+05:30)
+
+**Escaping:**
+- `[text]` - Escaped text that won't be formatted
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-date-format.json
 ```

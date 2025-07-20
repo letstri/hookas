@@ -4,19 +4,6 @@
   "homepage": "https://github.com/letstri/hookas",
   "items": [
     {
-      "name": "use-is-online",
-      "type": "registry:hook",
-      "title": "useIsOnline",
-      "description": "A hook to check if the user is online",
-      "files": [
-        {
-          "path": "registry/hooks/use-is-online.ts",
-          "type": "registry:hook",
-          "target": "hookas/use-is-online.ts"
-        }
-      ]
-    },
-    {
       "name": "use-async-effect",
       "type": "registry:hook",
       "title": "useAsyncEffect",
@@ -396,6 +383,19 @@
           "target": "hookas/use-scroll-info.ts"
         }
       ]
+    },
+    {
+        "name": "use-network",
+        "type": "registry:hook",
+        "title": "useNetwork",
+        "description": "A hook to get the network information",
+        "files": [
+            {
+            "path": "registry/hooks/use-network.ts",
+            "type": "registry:hook",
+            "target": "hookas/use-network.ts"
+            }
+        ]
     }
   ]
 }

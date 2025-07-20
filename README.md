@@ -54,31 +54,80 @@ Find the hook you want to use and copy the link to install the hook into your pr
 
 ### Network
 
-- [useIsOnline](#useisonline) - Check if the user is online
+- [useNetwork](#usenetwork) - Monitor network status and type
 
 ### Date & Time
 
 - [useDateFormat](#usedateformat) - Format dates with customizable patterns and locales
 
-### useIsOnline
+### useNetwork
 
-Check if the user is online.
+Monitor network connection status, type, and quality using the Network Information API.
 
 #### Usage
 
 ```tsx
-import { useIsOnline } from '@/hookas/use-is-online'
+import { useNetwork } from '@/hookas/use-network'
 
-function ConnectionStatus() {
-  const isOnline = useIsOnline()
-  return <div>{isOnline ? 'Online' : 'Offline'}</div>
+function NetworkStatus() {
+  const {
+    effectiveType,
+    downlink,
+    rtt,
+    saveData,
+    isConnectionSlow,
+    isSupported,
+    type,
+    online
+  } = useNetwork()
+
+  if (!isSupported) {
+    return <div>Network Information API not supported</div>
+  }
+
+  return (
+    <div>
+      <p>Status: {online ? 'Online' : 'Offline'}</p>
+      <p>Connection Type: {effectiveType}</p>
+      <p>Speed: {downlink} Mbps</p>
+      <p>Latency: {rtt}ms</p>
+      <p>Technology: {type}</p>
+      {isConnectionSlow && <p>⚠️ Slow connection detected</p>}
+      {saveData && <p>📱 Data saver mode enabled</p>}
+    </div>
+  )
 }
 ```
+
+#### Network State Properties
+
+The hook returns a `NetworkState` object with the following properties:
+
+- **`downlink`**: Effective bandwidth estimate in megabits per second
+- **`downlinkMax`**: Maximum downlink speed in Mbps (experimental, may be undefined)
+- **`effectiveType`**: Connection quality ('slow-2g', '2g', '3g', '4g')
+- **`rtt`**: Round-trip time in milliseconds
+- **`saveData`**: Whether data saver mode is enabled
+- **`type`**: Connection technology ('wifi', 'cellular', 'ethernet', etc.)
+- **`isSupported`**: Whether the Network Information API is supported
+- **`isConnectionSlow`**: Computed boolean for slow connections (slow-2g or 2g)
+- **`online`**: Whether the user is currently online (works in all browsers)
+
+#### Browser Support
+
+The Network Information API has limited browser support:
+- ✅ Chrome/Edge (61+)
+- ✅ Chrome Android (38+)
+- ✅ Samsung Internet (3+)
+- ❌ Firefox
+- ❌ Safari
+
+The hook gracefully handles unsupported browsers by returning default values and `isSupported: false`.
 
 #### Install
 
 ```bash
-npx shadcn@latest add https://hookas.letstri.dev/r/use-is-online.json
+npx shadcn@latest add https://hookas.letstri.dev/r/use-network.json
 ```
 
 ### useAsyncEffect

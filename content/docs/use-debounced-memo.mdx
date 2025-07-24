@@ -1,0 +1,41 @@
+---
+title: Use Debounced Memo
+description: Debounce expensive computations.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-debounced-memo.json
+```
+
+#### Demo
+
+import { DebouncedMemoDemo } from '@/components/demo/use-debounced-memo'
+
+<DebouncedMemoDemo />
+
+#### Usage
+
+```tsx
+import { useDebouncedMemo } from '@/hookas/use-debounced-memo'
+
+function ExpensiveCalculation() {
+  const [count, setCount] = useState(0)
+  const [multiplier, setMultiplier] = useState(2)
+
+  const expensiveValue = useDebouncedMemo(() => {
+    // Expensive computation
+    return count * multiplier
+  }, [count, multiplier], 500)
+
+  return (
+    <div>
+      <input value={count} onChange={(e) => setCount(Number(e.target.value))} />
+      <p>Result: {expensiveValue}</p>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-debounced-memo.ts)

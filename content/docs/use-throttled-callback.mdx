@@ -1,0 +1,39 @@
+---
+title: Use Throttled Callback
+description: Throttle function calls to control execution rate.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-throttled-callback.json
+```
+
+#### Demo
+
+import { ThrottledCallbackDemo } from '@/components/demo/use-throttled-callback'
+
+<ThrottledCallbackDemo />
+
+#### Usage
+
+```tsx
+import { useThrottledCallback } from '@/hookas/use-throttled-callback'
+
+function ScrollHandler() {
+  const [scrollCount, setScrollCount] = useState(0)
+
+  const throttledScroll = useThrottledCallback(() => {
+    setScrollCount(prev => prev + 1)
+    // This will only execute at most once per 100ms
+  }, [setScrollCount], 100)
+
+  return (
+    <div onScroll={throttledScroll}>
+      <p>Scroll events handled: {scrollCount}</p>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-throttled-callback.ts)

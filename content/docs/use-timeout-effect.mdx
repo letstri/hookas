@@ -1,0 +1,38 @@
+---
+title: Use Timeout Effect
+description: Run an effect after a timeout.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-timeout-effect.json
+```
+
+#### Demo
+
+import { TimeoutEffectDemo } from '@/components/demo/use-timeout-effect'
+
+<TimeoutEffectDemo />
+
+#### Usage
+
+```tsx
+import { useTimeoutEffect } from '@/hookas/use-timeout-effect'
+
+function DelayedMessage() {
+  const [message, setMessage] = useState('')
+
+  useTimeoutEffect(() => {
+    setMessage('This message appeared after 3 seconds!')
+  }, 3000, [])
+
+  return (
+    <div>
+      {message && <p>{message}</p>}
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-timeout-effect.ts)

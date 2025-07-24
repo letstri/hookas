@@ -1,0 +1,45 @@
+---
+title: Use Promise
+description: Handle promises without the `use` hook.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-promise.json
+```
+
+#### Demo
+
+import { PromiseDemo } from '@/components/demo/use-promise'
+
+<PromiseDemo />
+
+#### Usage
+
+```tsx
+import { usePromise } from '@/hookas/use-promise'
+
+function UserProfile() {
+  // With default value
+  const user = usePromise(() => fetchUser(), { name: 'Loading...' })
+
+  // Without default (starts as undefined)
+  const posts = usePromise(() => fetchUserPosts())
+
+  return (
+    <div>
+      <h1>{user.name}</h1>
+      {posts ? (
+        <ul>
+          {posts.map(post => <li key={post.id}>{post.title}</li>)}
+        </ul>
+      ) : (
+        <p>Loading posts...</p>
+      )}
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-promise.ts)

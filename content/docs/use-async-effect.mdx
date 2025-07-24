@@ -1,0 +1,54 @@
+---
+title: Use Async Effect
+description: Run asynchronous operations in React effects.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-async-effect.json
+```
+
+#### Demo
+
+import { AsyncEffectDemo } from '@/components/demo/use-async-effect'
+
+<AsyncEffectDemo />
+
+#### Usage
+
+```tsx
+import { useAsyncEffect } from '@/hookas/use-async-effect'
+
+function DataFetcher() {
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(false)
+
+  useAsyncEffect(async () => {
+    setLoading(true)
+
+    try {
+      const response = await fetch('/api/data')
+      const result = await response.json()
+      setData(result)
+    } catch (error) {
+      console.error('Error fetching data:', error)
+    } finally {
+      setLoading(false)
+    }
+
+    // Optional cleanup function
+    return () => {
+      console.log('Effect cleanup')
+    }
+  }, [])
+
+  return (
+    <div>
+      {loading ? <p>Loading...</p> : <pre>{JSON.stringify(data, null, 2)}</pre>}
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-async-effect.ts)

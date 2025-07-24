@@ -1,0 +1,40 @@
+---
+title: Use Mounted Effect
+description: Run an effect after the component is mounted.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-mounted-effect.json
+```
+
+#### Demo
+
+import { MountedEffectDemo } from '@/components/demo/use-mounted-effect'
+
+<MountedEffectDemo />
+
+#### Usage
+
+```tsx
+import { useMountedEffect } from '@/hookas/use-mounted-effect'
+
+function Component() {
+  const [count, setCount] = useState(0)
+
+  // This effect won't run on mount, only when count changes
+  useMountedEffect(() => {
+    console.log('Count changed:', count)
+  }, [count])
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-mounted-effect.ts)

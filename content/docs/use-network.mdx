@@ -1,0 +1,56 @@
+---
+title: useNetwork
+description: React hook to monitor network connection status, type, and quality using the Network Information API.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-network.json
+```
+
+## Demo
+
+<div className="demo">
+  <NetworkDemo />
+</div>
+
+import { NetworkDemo } from '../../components/demo/use-network'
+
+## Usage
+
+```tsx
+import { useNetwork } from './hooks/use-network'
+
+function NetworkStatus() {
+  const {
+    effectiveType,
+    downlink,
+    rtt,
+    saveData,
+    isConnectionSlow,
+    isSupported,
+    type,
+    online
+  } = useNetwork()
+
+  if (!isSupported) {
+    return <div>Network Information API not supported</div>
+  }
+
+  return (
+    <div>
+      <p>Status: {online ? 'Online' : 'Offline'}</p>
+      <p>Connection Type: {effectiveType}</p>
+      <p>Speed: {downlink} Mbps</p>
+      <p>Latency: {rtt}ms</p>
+      {isConnectionSlow && <p>⚠️ Slow connection detected</p>}
+      {saveData && <p>📱 Data saver mode enabled</p>}
+    </div>
+  )
+}
+```
+
+## Source
+
+<a href="https://github.com/letstri/hookas/blob/main/registry/hooks/use-network.ts" target="_blank" rel="noopener noreferrer">View source</a>

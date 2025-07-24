@@ -1,0 +1,41 @@
+---
+title: Use Media Query
+description: Respond to CSS media queries.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-media-query.json
+```
+
+#### Demo
+
+import { MediaQueryDemo } from '@/components/demo/use-media-query'
+
+<MediaQueryDemo />
+
+#### Usage
+
+```tsx
+import { useMediaQuery } from '@/hookas/use-media-query'
+
+function ResponsiveComponent() {
+  const isMobile = useMediaQuery('(max-width: 768px)')
+  const prefersDark = useMediaQuery('(prefers-color-scheme: dark)')
+  const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
+
+  return (
+    <div className={prefersDark ? 'dark-theme' : 'light-theme'}>
+      {isMobile ? (
+        <MobileLayout />
+      ) : (
+        <DesktopLayout />
+      )}
+      {!prefersReducedMotion && <AnimatedComponent />}
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-media-query.ts)

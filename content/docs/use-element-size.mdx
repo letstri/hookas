@@ -1,0 +1,38 @@
+---
+title: Use Element Size
+description: Track element size with ResizeObserver.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-element-size.json
+```
+
+#### Demo
+
+import { ElementSizeDemo } from '@/components/demo/use-element-size'
+
+<ElementSizeDemo />
+
+#### Usage
+
+```tsx
+import { useRef } from 'react'
+import { useElementSize } from '@/hookas/use-element-size'
+
+function ResizableBox() {
+  const ref = useRef<HTMLDivElement>(null)
+  const { width, height } = useElementSize(ref)
+
+  return (
+    <div ref={ref} className="resize overflow-auto border">
+      <p>Width: {width}px</p>
+      <p>Height: {height}px</p>
+      <p>Area: {width && height ? width * height : 0}px²</p>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-element-size.ts)

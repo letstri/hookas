@@ -1,0 +1,52 @@
+---
+title: Use Session Storage
+description: Store data in session storage.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-session-storage.json
+```
+
+#### Demo
+
+import { SessionStorageDemo } from '@/components/demo/use-session-storage'
+
+<SessionStorageDemo />
+
+#### Usage
+
+```tsx
+import { useSessionStorage } from '@/hookas/use-session-storage'
+
+function FormWithSessionStorage() {
+  const [formData, setFormData] = useSessionStorage('form-data', {
+    name: '',
+    email: '',
+    message: ''
+  })
+
+  return (
+    <form>
+      <input
+        value={formData.name}
+        onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+        placeholder="Name"
+      />
+      <input
+        value={formData.email}
+        onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+        placeholder="Email"
+      />
+      <textarea
+        value={formData.message}
+        onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+        placeholder="Message"
+      />
+    </form>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-session-storage.ts)

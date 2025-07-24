@@ -1,0 +1,40 @@
+---
+title: Use Query
+description: Fetch data with a lightweight query hook.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-query.json
+```
+
+#### Demo
+
+import { QueryDemo } from '@/components/demo/use-query'
+
+<QueryDemo />
+
+#### Usage
+
+```tsx
+import { useQuery } from '@/hookas/use-query'
+
+function DataFetcher() {
+  const { data, error, status, refetch } = useQuery(() =>
+    fetch('https://api.example.com/data').then(res => res.json())
+  )
+
+  if (status === 'loading') return <div>Loading...</div>
+  if (status === 'error') return <div>Error: {error?.message}</div>
+
+  return (
+    <div>
+      <button onClick={refetch}>Refetch</button>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-query.ts)

@@ -1,0 +1,46 @@
+---
+title: useIsScrolled
+description: React hook to detect if an element has been scrolled in a specific direction.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-is-scrolled.json
+```
+
+## Demo
+
+<div className="demo">
+  <IsScrolledDemo />
+</div>
+
+import { IsScrolledDemo } from '../../components/demo/use-is-scrolled'
+
+## Usage
+
+```tsx
+import { useIsScrolled } from './hooks/use-is-scrolled'
+
+function ScrollIndicator() {
+  const ref = useRef<HTMLDivElement>(null)
+  const isScrolled = useIsScrolled(ref, {
+    direction: 'vertical',
+    side: 'top',
+    threshold: 10
+  })
+
+  return (
+    <div>
+      <div ref={ref} className="h-64 overflow-auto">
+        {/* Scrollable content */}
+      </div>
+      {isScrolled && <div>Element has been scrolled!</div>}
+    </div>
+  )
+}
+```
+
+## Source
+
+<a href="https://github.com/letstri/hookas/blob/main/registry/hooks/use-is-scrolled.ts" target="_blank" rel="noopener noreferrer">View source</a>

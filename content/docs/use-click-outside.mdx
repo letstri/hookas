@@ -1,0 +1,47 @@
+---
+title: Use Click Outside
+description: Detect clicks outside specified elements.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-click-outside.json
+```
+
+#### Demo
+
+import { ClickOutsideDemo } from '@/components/demo/use-click-outside'
+
+<ClickOutsideDemo />
+
+#### Usage
+
+```tsx
+import { useRef, useState } from 'react'
+import { useClickOutside } from '@/hookas/use-click-outside'
+
+function DropdownMenu() {
+  const [isOpen, setIsOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useClickOutside(ref, () => setIsOpen(false))
+
+  return (
+    <div ref={ref}>
+      <button onClick={() => setIsOpen(!isOpen)}>
+        Toggle Menu
+      </button>
+      {isOpen && (
+        <div className="menu">
+          <div>Menu Item 1</div>
+          <div>Menu Item 2</div>
+          <div>Menu Item 3</div>
+        </div>
+      )}
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-click-outside.ts)

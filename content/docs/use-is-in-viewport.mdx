@@ -1,0 +1,41 @@
+---
+title: useIsInViewport
+description: React hook to detect if an element is visible in the viewport using Intersection Observer.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-is-in-viewport.json
+```
+
+## Demo
+
+<div className="demo">
+  <IsInViewportDemo />
+</div>
+
+import { IsInViewportDemo } from '../../components/demo/use-is-in-viewport'
+
+## Usage
+
+```tsx
+import { useIsInViewport } from './hooks/use-is-in-viewport'
+
+function LazyImage() {
+  const ref = useRef<HTMLImageElement>(null)
+  const isVisible = useIsInViewport(ref, 'partial')
+
+  return (
+    <img
+      ref={ref}
+      src={isVisible ? 'actual-image.jpg' : 'placeholder.jpg'}
+      alt="Lazy loaded image"
+    />
+  )
+}
+```
+
+## Source
+
+<a href="https://github.com/letstri/hookas/blob/main/registry/hooks/use-is-in-viewport.ts" target="_blank" rel="noopener noreferrer">View source</a>

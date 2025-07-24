@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "---Getting Started---",
+    "index",
+    "---LLMs---",
+    "[llms.txt](/llms.txt)",
+    "[llms-full.txt](/llms-full.txt)"
+  ]
+}

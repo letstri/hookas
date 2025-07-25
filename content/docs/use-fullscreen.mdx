@@ -1,0 +1,48 @@
+---
+title: Use Fullscreen
+description: Control fullscreen mode.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-fullscreen.json
+```
+
+#### Demo
+
+import { FullscreenDemo } from '@/components/demo/use-fullscreen'
+
+<FullscreenDemo />
+
+#### Usage
+
+```tsx
+import { useRef } from 'react'
+import { useFullscreen } from '@/hookas/use-fullscreen'
+
+function VideoPlayer() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const { isFullscreen, toggleFullscreen, enterFullscreen, exitFullscreen } = useFullscreen({
+    element: videoRef,
+    onFullscreenChange: (isFullscreen) => {
+      console.log('Fullscreen changed:', isFullscreen)
+    }
+  })
+
+  return (
+    <div>
+      <video ref={videoRef} controls>
+        <source src="/video.mp4" type="video/mp4" />
+      </video>
+
+      <button onClick={toggleFullscreen}>
+        {isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
+      </button>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-fullscreen.ts)

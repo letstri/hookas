@@ -1,0 +1,39 @@
+---
+title: Use Isomorphic Effect
+description: Run an effect on both client and server.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-isomorphic-effect.json
+```
+
+#### Demo
+
+import { IsomorphicEffectDemo } from '@/components/demo/use-isomorphic-effect'
+
+<IsomorphicEffectDemo />
+
+#### Usage
+
+```tsx
+import { useIsomorphicEffect } from '@/hookas/use-isomorphic-effect'
+
+function Component() {
+  const [width, setWidth] = useState(0)
+
+  useIsomorphicEffect(() => {
+    // Uses useLayoutEffect on client, useEffect on server
+    setWidth(window.innerWidth)
+  }, [])
+
+  return (
+    <div>
+      <p>Window width: {width}px</p>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-isomorphic-effect.ts)

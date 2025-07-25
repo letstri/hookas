@@ -1,0 +1,47 @@
+---
+title: useMousePosition
+description: React hook to track mouse position coordinates within an element or globally.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-mouse-position.json
+```
+
+## Demo
+
+<div className="demo">
+  <MousePositionDemo />
+</div>
+
+import { MousePositionDemo } from '../../components/demo/use-mouse-position'
+
+## Usage
+
+```tsx
+import { useMousePosition } from './hooks/use-mouse-position'
+
+function App() {
+  const elementRef = useRef<HTMLDivElement>(null)
+
+  // Track mouse position globally
+  const globalPosition = useMousePosition()
+
+  // Track mouse position relative to a specific element
+  const localPosition = useMousePosition(elementRef.current)
+
+  return (
+    <div>
+      <div ref={elementRef}>
+        Global: {globalPosition.x}, {globalPosition.y}
+        Local: {localPosition.x}, {localPosition.y}
+      </div>
+    </div>
+  )
+}
+```
+
+## Source
+
+<a href="https://github.com/letstri/hookas/blob/main/registry/hooks/use-mouse-position.ts" target="_blank" rel="noopener noreferrer">View source</a>

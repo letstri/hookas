@@ -1,0 +1,44 @@
+---
+title: Use Debounced Callback
+description: Debounce function calls for performance.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-debounced-callback.json
+```
+
+#### Demo
+
+import { DebouncedCallbackDemo } from '@/components/demo/use-debounced-callback'
+
+<DebouncedCallbackDemo />
+
+#### Usage
+
+```tsx
+import { useDebouncedCallback } from '@/hookas/use-debounced-callback'
+
+function SearchInput() {
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const debouncedSearch = useDebouncedCallback((term: string) => {
+    // API call or expensive operation
+    console.log('Searching for:', term)
+  }, [setSearchTerm], 500)
+
+  return (
+    <input
+      value={searchTerm}
+      onChange={(e) => {
+        setSearchTerm(e.target.value)
+        debouncedSearch(e.target.value)
+      }}
+      placeholder="Search..."
+    />
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-debounced-callback.ts)

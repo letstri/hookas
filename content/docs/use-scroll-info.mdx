@@ -1,0 +1,46 @@
+---
+title: useScrollInfo
+description: React hook to get detailed scroll position information including remaining distances.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-scroll-info.json
+```
+
+## Demo
+
+<div className="demo">
+  <ScrollInfoDemo />
+</div>
+
+import { ScrollInfoDemo } from '../../components/demo/use-scroll-info'
+
+## Usage
+
+```tsx
+import { useScrollInfo } from './hooks/use-scroll-info'
+
+function InfiniteScroll() {
+  const ref = useRef<HTMLDivElement>(null)
+  const { top, bottom, left, right } = useScrollInfo(ref)
+
+  // Load more content when near bottom
+  useEffect(() => {
+    if (bottom < 100) {
+      loadMoreContent()
+    }
+  }, [bottom])
+
+  return (
+    <div ref={ref} className="overflow-auto h-64">
+      {/* Content */}
+    </div>
+  )
+}
+```
+
+## Source
+
+<a href="https://github.com/letstri/hookas/blob/main/registry/hooks/use-scroll-info.ts" target="_blank" rel="noopener noreferrer">View source</a>

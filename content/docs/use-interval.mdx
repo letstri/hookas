@@ -1,0 +1,38 @@
+---
+title: Use Interval
+description: Run a function repeatedly with a delay.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-interval.json
+```
+
+#### Demo
+
+import { IntervalDemo } from '@/components/demo/use-interval'
+
+<IntervalDemo />
+
+#### Usage
+
+```tsx
+import { useInterval } from '@/hookas/use-interval'
+
+function Timer() {
+  const [count, setCount] = useState(0)
+
+  useInterval(() => {
+    setCount(count + 1)
+  }, 1000)
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-interval.ts)

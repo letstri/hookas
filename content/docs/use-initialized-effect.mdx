@@ -1,0 +1,41 @@
+---
+title: Use Initialized Effect
+description: Run an effect only after all dependencies are defined.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-initialized-effect.json
+```
+
+#### Demo
+
+import { InitializedEffectDemo } from '@/components/demo/use-initialized-effect'
+
+<InitializedEffectDemo />
+
+#### Usage
+
+```tsx
+import { useInitializedEffect } from '@/hookas/use-initialized-effect'
+
+function Component() {
+  const [user, setUser] = useState()
+  const [profile, setProfile] = useState()
+
+  // This effect only runs when both user and profile are not undefined
+  useInitializedEffect(() => {
+    console.log('Both user and profile are loaded!', user, profile)
+  }, [user, profile])
+
+  return (
+    <div>
+      <button onClick={() => setUser({ name: 'John' })}>Load User</button>
+      <button onClick={() => setProfile({ bio: 'Developer' })}>Load Profile</button>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-initialized-effect.ts)

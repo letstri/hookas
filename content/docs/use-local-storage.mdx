@@ -1,0 +1,50 @@
+---
+title: Use Local Storage
+description: Store data in local storage.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-local-storage.json
+```
+
+#### Demo
+
+import { LocalStorageDemo } from '@/components/demo/use-local-storage'
+
+<LocalStorageDemo />
+
+#### Usage
+
+```tsx
+import { useLocalStorage } from '@/hookas/use-local-storage'
+
+function UserProfile() {
+  const [name, setName] = useLocalStorage('username', '')
+  const [settings, setSettings] = useLocalStorage('settings', {
+    theme: 'light',
+    notifications: true
+  })
+
+  return (
+    <div>
+      <input
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Enter your name"
+      />
+      <button
+        onClick={() => setSettings(prev => ({
+          ...prev,
+          theme: prev.theme === 'light' ? 'dark' : 'light'
+        }))}
+      >
+        Toggle Theme: {settings.theme}
+      </button>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-local-storage.ts)

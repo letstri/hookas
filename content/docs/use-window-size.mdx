@@ -1,0 +1,38 @@
+---
+title: useWindowSize
+description: React hook to track the current browser window size with real-time updates.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-window-size.json
+```
+
+## Demo
+
+<div className="demo">
+  <WindowSizeDemo />
+</div>
+
+import { WindowSizeDemo } from '../../components/demo/use-window-size'
+
+## Usage
+
+```tsx
+import { useWindowSize } from './hooks/use-window-size'
+
+function App() {
+  const { width, height } = useWindowSize()
+
+  return (
+    <div>
+      <p>Window size: {width} x {height}</p>
+    </div>
+  )
+}
+```
+
+## Source
+
+<a href="https://github.com/letstri/hookas/blob/main/registry/hooks/use-window-size.ts" target="_blank" rel="noopener noreferrer">View source</a>

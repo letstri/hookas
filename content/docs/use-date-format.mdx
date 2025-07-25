@@ -1,0 +1,55 @@
+---
+title: useDateFormat
+description: React hook to format dates with customizable patterns and locales, supporting comprehensive format tokens.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-date-format.json
+```
+
+## Demo
+
+<div className="demo">
+  <DateFormatDemo />
+</div>
+
+import { DateFormatDemo } from '../../components/demo/use-date-format'
+
+## Usage
+
+```tsx
+import { useDateFormat } from './hooks/use-date-format'
+
+function DateDisplay() {
+  const date = new Date()
+
+  // Basic formatting
+  const formattedTime = useDateFormat(date, 'HH:mm:ss')
+  const formattedDate = useDateFormat(date, 'YYYY-MM-DD')
+  const fullFormat = useDateFormat(date, 'dddd, MMMM Do, YYYY [at] h:mm A')
+
+  return (
+    <div>
+      <p>Time: {formattedTime}</p>
+      <p>Date: {formattedDate}</p>
+      <p>Full: {fullFormat}</p>
+    </div>
+  )
+}
+
+// With custom locale
+function LocalizedDate() {
+  const date = new Date()
+  const frenchDate = useDateFormat(date, 'dddd, DD MMMM YYYY', {
+    locales: 'fr-FR'
+  })
+
+  return <p>{frenchDate}</p>
+}
+```
+
+## Source
+
+<a href="https://github.com/letstri/hookas/blob/main/registry/hooks/use-date-format.ts" target="_blank" rel="noopener noreferrer">View source</a>

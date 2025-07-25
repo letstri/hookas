@@ -1,0 +1,42 @@
+---
+title: Use Initialized Effect Once
+description: Run an effect only once after all dependencies are defined.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-initialized-effect-once.json
+```
+
+#### Demo
+
+import { InitializedEffectOnceDemo } from '@/components/demo/use-initialized-effect-once'
+
+<InitializedEffectOnceDemo />
+
+#### Usage
+
+```tsx
+import { useInitializedEffectOnce } from '@/hookas/use-initialized-effect-once'
+
+function Component() {
+  const [user, setUser] = useState()
+  const [settings, setSetting] = useState()
+
+  // This effect runs only ONCE when both are first defined
+  useInitializedEffectOnce(() => {
+    console.log('Initialization complete!')
+    // This won't run again even if user or settings change
+  }, [user, settings])
+
+  return (
+    <div>
+      <button onClick={() => setUser({ name: 'John' })}>Load User</button>
+      <button onClick={() => setSettings({ theme: 'dark' })}>Load Settings</button>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-initialized-effect-once.ts)

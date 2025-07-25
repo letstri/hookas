@@ -1,0 +1,42 @@
+---
+title: Use Is Mounted
+description: Check if the component is mounted.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-is-mounted.json
+```
+
+#### Demo
+
+import { IsMountedDemo } from '@/components/demo/use-is-mounted'
+
+<IsMountedDemo />
+
+#### Usage
+
+```tsx
+import { useIsMounted } from '@/hookas/use-is-mounted'
+
+function Component() {
+  const isMounted = useIsMounted()
+
+  const fetchData = async () => {
+    const data = await api.getData()
+    // Only update state if component is still mounted
+    if (isMounted) {
+      setData(data)
+    }
+  }
+
+  return (
+    <div>
+      <p>Component is {isMounted ? 'mounted' : 'not mounted'}</p>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-is-mounted.ts)

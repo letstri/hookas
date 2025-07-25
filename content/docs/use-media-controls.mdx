@@ -1,0 +1,67 @@
+---
+title: useMediaControls
+description: React hook for comprehensive media element control including play, pause, volume, and seeking.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-media-controls.json
+```
+
+## Demo
+
+<div className="demo">
+  <MediaControlsDemo />
+</div>
+
+import { MediaControlsDemo } from '../../components/demo/use-media-controls'
+
+## Usage
+
+```tsx
+import { useRef } from 'react'
+import { useMediaControls } from './hooks/use-media-controls'
+
+function App() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const controls = useMediaControls(videoRef)
+
+  return (
+    <div>
+      <video ref={videoRef} src="video.mp4" />
+
+      <div>
+        <button onClick={controls.toggle}>
+          {controls.isPlaying ? 'Pause' : 'Play'}
+        </button>
+        <button onClick={controls.stop}>Stop</button>
+        <button onClick={() => controls.toggleMute()}>
+          {controls.isMuted ? 'Unmute' : 'Mute'}
+        </button>
+
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.1"
+          value={controls.volume}
+          onChange={(e) => controls.setVolume(Number.parseFloat(e.target.value))}
+        />
+
+        <input
+          type="range"
+          min="0"
+          max={controls.duration}
+          value={controls.currentTime}
+          onChange={(e) => controls.setCurrentTime(Number.parseFloat(e.target.value))}
+        />
+      </div>
+    </div>
+  )
+}
+```
+
+## Source
+
+<a href="https://github.com/letstri/hookas/blob/main/registry/hooks/use-media-controls.ts" target="_blank" rel="noopener noreferrer">View source</a>

@@ -1,0 +1,46 @@
+---
+title: useIsWindowScrolled
+description: React hook to detect if the browser window has been scrolled beyond a threshold.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-is-window-scrolled.json
+```
+
+## Demo
+
+<div className="demo">
+  <IsWindowScrolledDemo />
+</div>
+
+import { IsWindowScrolledDemo } from '../../components/demo/use-is-window-scrolled'
+
+## Usage
+
+```tsx
+import { useIsWindowScrolled } from './hooks/use-is-window-scrolled'
+
+function ScrollToTopButton() {
+  const isScrolled = useIsWindowScrolled({ threshold: 100 })
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  return (
+    <>
+      {isScrolled && (
+        <button onClick={scrollToTop} className="fixed bottom-4 right-4">
+          Scroll to Top
+        </button>
+      )}
+    </>
+  )
+}
+```
+
+## Source
+
+<a href="https://github.com/letstri/hookas/blob/main/registry/hooks/use-is-window-scrolled.ts" target="_blank" rel="noopener noreferrer">View source</a>

@@ -1,0 +1,40 @@
+---
+title: Use Debounced State
+description: Manage state with debounced updates.
+---
+
+#### Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-debounced-state.json
+```
+
+#### Demo
+
+import { DebouncedStateDemo } from '@/components/demo/use-debounced-state'
+
+<DebouncedStateDemo />
+
+#### Usage
+
+```tsx
+import { useDebouncedState } from '@/hookas/use-debounced-state'
+
+function DebouncedInput() {
+  const [debouncedValue, value, setValue] = useDebouncedState('', 500)
+
+  return (
+    <div>
+      <input
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder="Type something..."
+      />
+      <p>Current: {value}</p>
+      <p>Debounced: {debouncedValue}</p>
+    </div>
+  )
+}
+```
+
+[Source](https://github.com/letstri/hookas/blob/main/registry/hooks/use-debounced-state.ts)

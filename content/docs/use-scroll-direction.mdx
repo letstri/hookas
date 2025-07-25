@@ -1,0 +1,49 @@
+---
+title: useScrollDirection
+description: React hook to detect scroll direction with configurable delay and element targeting.
+---
+
+## Installation
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-scroll-direction.json
+```
+
+## Demo
+
+<div className="demo">
+  <ScrollDirectionDemo />
+</div>
+
+import { ScrollDirectionDemo } from '../../components/demo/use-scroll-direction'
+
+## Usage
+
+```tsx
+import { useRef } from 'react'
+import { useScrollDirection } from './hooks/use-scroll-direction'
+
+function App() {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  // Monitor global scroll direction
+  const globalDirection = useScrollDirection()
+
+  // Monitor specific element scroll direction with custom delay
+  const localDirection = useScrollDirection(containerRef, 300)
+
+  return (
+    <div>
+      <p>Global direction: {globalDirection || 'none'}</p>
+      <div ref={containerRef} className="overflow-auto">
+        <p>Container direction: {localDirection || 'none'}</p>
+        {/* scrollable content */}
+      </div>
+    </div>
+  )
+}
+```
+
+## Source
+
+<a href="https://github.com/letstri/hookas/blob/main/registry/hooks/use-scroll-direction.ts" target="_blank" rel="noopener noreferrer">View source</a>

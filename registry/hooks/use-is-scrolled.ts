@@ -35,9 +35,11 @@ export function useIsScrolled(
       if (direction === 'vertical') {
         if (side === 'top') {
           scrolled = scrollTop > threshold
-        } else if (side === 'bottom') {
+        }
+        else if (side === 'bottom') {
           scrolled = scrollTop < scrollHeight - clientHeight - threshold
-        } else {
+        }
+        else {
           // fallback to top if invalid side for vertical
           scrolled = scrollTop > threshold
         }
@@ -45,9 +47,11 @@ export function useIsScrolled(
       else if (direction === 'horizontal') {
         if (side === 'left') {
           scrolled = scrollLeft > threshold
-        } else if (side === 'right') {
+        }
+        else if (side === 'right') {
           scrolled = scrollLeft < scrollWidth - clientWidth - threshold
-        } else {
+        }
+        else {
           // fallback to left if invalid side for horizontal
           scrolled = scrollLeft > threshold
         }
@@ -59,17 +63,21 @@ export function useIsScrolled(
 
         if (side === 'top') {
           verticalScrolled = scrollTop > threshold
-        } else if (side === 'bottom') {
+        }
+        else if (side === 'bottom') {
           verticalScrolled = scrollTop < scrollHeight - clientHeight - threshold
-        } else {
+        }
+        else {
           verticalScrolled = scrollTop > threshold
         }
 
         if (side === 'left') {
           horizontalScrolled = scrollLeft > threshold
-        } else if (side === 'right') {
+        }
+        else if (side === 'right') {
           horizontalScrolled = scrollLeft < scrollWidth - clientWidth - threshold
-        } else {
+        }
+        else {
           horizontalScrolled = scrollLeft > threshold
         }
 

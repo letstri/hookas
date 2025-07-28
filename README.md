@@ -87,11 +87,29 @@ function NetworkStatus() {
 
   return (
     <div>
-      <p>Status: {online ? 'Online' : 'Offline'}</p>
-      <p>Connection Type: {effectiveType}</p>
-      <p>Speed: {downlink} Mbps</p>
-      <p>Latency: {rtt}ms</p>
-      <p>Technology: {type}</p>
+      <p>
+        Status:
+        {online ? 'Online' : 'Offline'}
+      </p>
+      <p>
+        Connection Type:
+        {effectiveType}
+      </p>
+      <p>
+        Speed:
+        {downlink}
+        {' '}
+        Mbps
+      </p>
+      <p>
+        Latency:
+        {rtt}
+        ms
+      </p>
+      <p>
+        Technology:
+        {type}
+      </p>
       {isConnectionSlow && <p>⚠️ Slow connection detected</p>}
       {saveData && <p>📱 Data saver mode enabled</p>}
     </div>
@@ -116,6 +134,7 @@ The hook returns a `NetworkState` object with the following properties:
 #### Browser Support
 
 The Network Information API has limited browser support:
+
 - ✅ Chrome/Edge (61+)
 - ✅ Chrome Android (38+)
 - ✅ Samsung Internet (3+)
@@ -880,9 +899,18 @@ function DateDisplay() {
 
   return (
     <div>
-      <p>Time: {formattedTime}</p>
-      <p>Date: {formattedDate}</p>
-      <p>Full: {fullFormat}</p>
+      <p>
+        Time:
+        {formattedTime}
+      </p>
+      <p>
+        Date:
+        {formattedDate}
+      </p>
+      <p>
+        Full:
+        {fullFormat}
+      </p>
     </div>
   )
 }
@@ -919,7 +947,7 @@ function DynamicFormat() {
 
   return (
     <div>
-      <select value={format} onChange={(e) => setFormat(e.target.value)}>
+      <select value={format} onChange={e => setFormat(e.target.value)}>
         <option value="YYYY-MM-DD">ISO Date</option>
         <option value="MM/DD/YYYY">US Format</option>
         <option value="DD/MM/YYYY">EU Format</option>
@@ -927,7 +955,10 @@ function DynamicFormat() {
         <option value="h:mm:ss A">12-hour Time</option>
         <option value="HH:mm:ss">24-hour Time</option>
       </select>
-      <p>Formatted: {formatted}</p>
+      <p>
+        Formatted:
+        {formatted}
+      </p>
     </div>
   )
 }
@@ -938,11 +969,13 @@ function DynamicFormat() {
 The hook supports a comprehensive set of format tokens:
 
 **Year:**
+
 - `YYYY` - 4-digit year (2024)
 - `YY` - 2-digit year (24)
 - `Yo` - Ordinal year (2024th)
 
 **Month:**
+
 - `M` - Month number (1-12)
 - `MM` - Zero-padded month (01-12)
 - `MMM` - Short month name (Jan, Feb, Mar)
@@ -950,17 +983,20 @@ The hook supports a comprehensive set of format tokens:
 - `Mo` - Ordinal month (1st, 2nd, 3rd)
 
 **Day:**
+
 - `D` - Day of month (1-31)
 - `DD` - Zero-padded day (01-31)
 - `Do` - Ordinal day (1st, 2nd, 3rd)
 
 **Weekday:**
+
 - `d` - Day of week number (0-6, Sunday=0)
 - `dd` - Narrow weekday name (S, M, T)
 - `ddd` - Short weekday name (Sun, Mon, Tue)
 - `dddd` - Full weekday name (Sunday, Monday, Tuesday)
 
 **Hour:**
+
 - `H` - 24-hour format (0-23)
 - `HH` - Zero-padded 24-hour (00-23)
 - `h` - 12-hour format (1-12)
@@ -969,29 +1005,35 @@ The hook supports a comprehensive set of format tokens:
 - `ho` - Ordinal 12-hour (12th, 1st, 2nd)
 
 **Minute:**
+
 - `m` - Minutes (0-59)
 - `mm` - Zero-padded minutes (00-59)
 - `mo` - Ordinal minutes (0th, 1st, 2nd)
 
 **Second:**
+
 - `s` - Seconds (0-59)
 - `ss` - Zero-padded seconds (00-59)
 - `so` - Ordinal seconds (0th, 1st, 2nd)
 
 **Millisecond:**
+
 - `SSS` - Zero-padded milliseconds (000-999)
 
 **Meridiem:**
+
 - `A` - Uppercase meridiem (AM, PM)
 - `AA` - Uppercase with periods (A.M., P.M.)
 - `a` - Lowercase meridiem (am, pm)
 - `aa` - Lowercase with periods (a.m., p.m.)
 
 **Timezone:**
+
 - `z`, `zz`, `zzz` - Short timezone offset (+05:30)
 - `zzzz` - Long timezone offset (+05:30)
 
 **Escaping:**
+
 - `[text]` - Escaped text that won't be formatted
 
 #### Install

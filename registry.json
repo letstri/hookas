@@ -385,17 +385,17 @@
       ]
     },
     {
-        "name": "use-network",
-        "type": "registry:hook",
-        "title": "useNetwork",
-        "description": "A hook to get the network information",
-        "files": [
-            {
-            "path": "registry/hooks/use-network.ts",
-            "type": "registry:hook",
-            "target": "hookas/use-network.ts"
-            }
-        ]
+      "name": "use-network",
+      "type": "registry:hook",
+      "title": "useNetwork",
+      "description": "A hook to get the network information",
+      "files": [
+        {
+          "path": "registry/hooks/use-network.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-network.ts"
+        }
+      ]
     }
   ]
 }

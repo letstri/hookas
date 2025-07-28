@@ -15,7 +15,8 @@ export default function Home() {
           <p className="text-lg sm:text-xl md:text-2xl text-fd-muted-foreground max-w-2xl mb-8">
             The hook registry for
             {' '}
-            <span className="font-semibold text-fd-foreground">shadcn/ui CLI</span>.
+            <span className="font-semibold text-fd-foreground">shadcn/ui CLI</span>
+            .
           </p>
           <div className="flex gap-4">
             <a

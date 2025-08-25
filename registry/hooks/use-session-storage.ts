@@ -7,13 +7,17 @@ export function getSessionStorageValue<T>(key: string, defaultValue: T): T {
     return defaultValue
   }
 
-  try {
-    const item = window.sessionStorage.getItem(key)
-    return item ? (JSON.parse(item) as T) : defaultValue
-  }
-  catch (error) {
-    console.warn(`Error reading sessionStorage key "${key}":`, error)
+  const item = window.sessionStorage.getItem(key)
+
+  if (item === null) {
     return defaultValue
+  }
+
+  try {
+    return JSON.parse(item)
+  }
+  catch {
+    return typeof defaultValue === 'string' ? item as T : defaultValue
   }
 }
 
@@ -22,7 +26,7 @@ export function useSessionStorage<T>(key: string, initialValue: T | (() => T)) {
     const initial = typeof initialValue === 'function' ? (initialValue as () => T)() : initialValue
 
     return getSessionStorageValue(key, initial)
-  }, [key])
+  }, [key, initialValue])
 
   const [storedValue, setStoredValue] = React.useState<T>(readValue)
 

@@ -7,13 +7,17 @@ export function getLocalStorageValue<T>(key: string, defaultValue: T): T {
     return defaultValue
   }
 
-  try {
-    const item = window.localStorage.getItem(key)
-    return item ? (JSON.parse(item) as T) : defaultValue
-  }
-  catch (error) {
-    console.warn(`Error reading localStorage key "${key}":`, error)
+  const item = window.localStorage.getItem(key)
+
+  if (item === null) {
     return defaultValue
+  }
+
+  try {
+    return JSON.parse(item)
+  }
+  catch {
+    return typeof defaultValue === 'string' ? item as T : defaultValue
   }
 }
 
@@ -22,7 +26,7 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
     const initial = typeof initialValue === 'function' ? (initialValue as () => T)() : initialValue
 
     return getLocalStorageValue(key, initial)
-  }, [key])
+  }, [key, initialValue])
 
   const [storedValue, setStoredValue] = React.useState<T>(readValue)
 

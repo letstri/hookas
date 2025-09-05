@@ -2,12 +2,10 @@
 
 import * as React from 'react'
 
-// Extended Navigator type to include the connection property
 interface NavigatorWithConnection extends Navigator {
   connection?: NetworkInformation
 }
 
-// NetworkInformation interface based on MDN docs
 interface NetworkInformation extends EventTarget {
   downlink: number
   downlinkMax?: number
@@ -15,8 +13,8 @@ interface NetworkInformation extends EventTarget {
   rtt: number
   saveData: boolean
   type?: 'bluetooth' | 'cellular' | 'ethernet' | 'none' | 'wifi' | 'wimax' | 'other' | 'unknown'
-  addEventListener(type: 'change', listener: () => void): void
-  removeEventListener(type: 'change', listener: () => void): void
+  addEventListener: (type: 'change', listener: () => void) => void
+  removeEventListener: (type: 'change', listener: () => void) => void
 }
 
 export interface NetworkState {
@@ -58,9 +56,8 @@ export interface NetworkState {
   online: boolean
 }
 
-const getNetworkState = (): NetworkState => {
+function getNetworkState(): NetworkState {
   if (typeof window === 'undefined') {
-    // Server-side defaults
     return {
       downlink: 0,
       downlinkMax: undefined,
@@ -122,15 +119,12 @@ export function useNetwork(): NetworkState {
       setNetworkState(getNetworkState())
     }
 
-    // Set initial state
     updateNetworkState()
 
-    // Listen for connection changes (Network Information API)
     if (connection) {
       connection.addEventListener('change', updateNetworkState)
     }
 
-    // Listen for online/offline events
     window.addEventListener('online', updateNetworkState)
     window.addEventListener('offline', updateNetworkState)
 

@@ -188,6 +188,20 @@
       ]
     },
     {
+      "name": "use-throttled-memo",
+      "type": "registry:hook",
+      "title": "useThrottledMemo",
+      "description": "A hook to throttle a memo",
+      "registryDependencies": ["https://hookas.letstri.dev/r/use-throttled-callback.json"],
+      "files": [
+        {
+          "path": "registry/hooks/use-throttled-memo.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-throttled-memo.ts"
+        }
+      ]
+    },
+    {
       "name": "use-promise",
       "type": "registry:hook",
       "title": "usePromise",
@@ -385,17 +399,17 @@
       ]
     },
     {
-        "name": "use-network",
-        "type": "registry:hook",
-        "title": "useNetwork",
-        "description": "A hook to get the network information",
-        "files": [
-            {
-            "path": "registry/hooks/use-network.ts",
-            "type": "registry:hook",
-            "target": "hookas/use-network.ts"
-            }
-        ]
+      "name": "use-network",
+      "type": "registry:hook",
+      "title": "useNetwork",
+      "description": "A hook to get the network information",
+      "files": [
+        {
+          "path": "registry/hooks/use-network.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-network.ts"
+        }
+      ]
     }
   ]
 }

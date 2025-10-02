@@ -21,8 +21,6 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useMountedEffect](#usemountedeffect) - Run an effect after the component is mounted
 - [useIsMounted](#useismounted) - Check if the component is mounted
 - [useIsomorphicEffect](#useisomorphiceffect) - Run an effect on both client and server
-- [useInitializedEffect](#useinitializedeffect) - Run an effect only after all dependencies are defined
-- [useInitializedEffectOnce](#useinitializedeffectonce) - Run an effect only once after all dependencies are defined
 - [usePromise](#usepromise) - Handle promises without the `use` hook
 - [useAsyncEffect](#useasynceffect) - Run asynchronous operations in React effects
 
@@ -800,52 +798,6 @@ function IsWindowScrolled() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-is-window-scrolled.json
-```
-
-### useInitializedEffect
-
-Run an effect only after all dependencies are not undefined.
-
-#### Usage
-
-```tsx
-import { useInitializedEffect } from '@/hookas/use-initialized-effect'
-
-function InitializedEffect() {
-  // This will run only once after the dependencies are not undefined
-  useInitializedEffect(() => {
-    console.log('Hello')
-  }, [1, 2, 3])
-}
-```
-
-#### Install
-
-```bash
-npx shadcn@latest add https://hookas.letstri.dev/r/use-initialized-effect.json
-```
-
-### useInitializedEffectOnce
-
-Run an effect only once after all dependencies are not undefined.
-
-#### Usage
-
-```tsx
-import { useInitializedEffectOnce } from '@/hookas/use-initialized-effect-once'
-
-function InitializedEffectOnce() {
-  // This will run only once after the dependencies are not undefined
-  useInitializedEffectOnce(() => {
-    console.log('Hello')
-  }, [1, 2, 3])
-}
-```
-
-#### Install
-
-```bash
-npx shadcn@latest add https://hookas.letstri.dev/r/use-initialized-effect-once.json
 ```
 
 ### useTimeoutEffect

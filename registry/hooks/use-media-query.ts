@@ -2,16 +2,18 @@
 
 import * as React from 'react'
 
+const isBrowser = typeof window !== 'undefined'
+
 export function useMediaQuery(
   query: string,
-  initialValue?: boolean,
 ) {
-  const [matches, setMatches] = React.useState(initialValue ?? false)
+  const mediaQuery = React.useMemo(() => isBrowser ? window.matchMedia(query) : null, [query])
+
+  const [matches, setMatches] = React.useState(mediaQuery?.matches ?? false)
 
   React.useEffect(() => {
-    const mediaQuery = window.matchMedia(query)
-
-    setMatches(mediaQuery.matches)
+    if (!mediaQuery)
+      return
 
     const handleChange = (event: MediaQueryListEvent) => {
       setMatches(event.matches)
@@ -22,7 +24,7 @@ export function useMediaQuery(
     return () => {
       mediaQuery.removeEventListener('change', handleChange)
     }
-  }, [query])
+  }, [mediaQuery])
 
   return matches
 }

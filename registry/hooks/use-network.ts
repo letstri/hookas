@@ -119,8 +119,6 @@ export function useNetwork(): NetworkState {
       setNetworkState(getNetworkState())
     }
 
-    updateNetworkState()
-
     if (connection) {
       connection.addEventListener('change', updateNetworkState)
     }

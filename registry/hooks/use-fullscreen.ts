@@ -11,7 +11,7 @@ export function useFullscreen({
 } = {}) {
   const [isFullscreen, setIsFullscreen] = React.useState(false)
 
-  const enterFullscreen = React.useCallback(async () => {
+  const enterFullscreenEvent = React.useEffectEvent(async () => {
     const targetElement = element?.current || document.documentElement
 
     try {
@@ -31,9 +31,9 @@ export function useFullscreen({
     catch (error) {
       console.error('Failed to enter fullscreen mode:', error)
     }
-  }, [element])
+  })
 
-  const exitFullscreen = React.useCallback(async () => {
+  const exitFullscreenEvent = React.useEffectEvent(async () => {
     try {
       if (document.exitFullscreen) {
         await document.exitFullscreen()
@@ -51,16 +51,16 @@ export function useFullscreen({
     catch (error) {
       console.error('Failed to exit fullscreen mode:', error)
     }
-  }, [])
+  })
 
-  const toggleFullscreen = React.useCallback(() => {
+  const toggleFullscreenEvent = React.useEffectEvent(() => {
     if (isFullscreen) {
-      exitFullscreen()
+      exitFullscreenEvent()
     }
     else {
-      enterFullscreen()
+      enterFullscreenEvent()
     }
-  }, [enterFullscreen, exitFullscreen, isFullscreen])
+  })
 
   React.useEffect(() => {
     const handleFullscreenChange = () => {
@@ -92,8 +92,8 @@ export function useFullscreen({
 
   return {
     isFullscreen,
-    enterFullscreen,
-    exitFullscreen,
-    toggleFullscreen,
+    enterFullscreen: enterFullscreenEvent,
+    exitFullscreen: exitFullscreenEvent,
+    toggleFullscreen: toggleFullscreenEvent,
   }
 }

@@ -2,7 +2,10 @@
 
 import * as React from 'react'
 
-export function useIsInViewport(ref: React.RefObject<Element | null>, visibility: 'full' | 'partial' | number = 'partial') {
+export function useIsInViewport(
+  ref: React.RefObject<Element | null>,
+  visibility: 'full' | 'partial' | number = 'partial',
+) {
   const [isVisible, setIsVisible] = React.useState(false)
 
   React.useEffect(() => {

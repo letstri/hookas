@@ -8,11 +8,8 @@ export function useClickOutside<T extends Element = Element>(
   options?: { enabled?: boolean },
 ): void {
   const { enabled = true } = options ?? {}
-  const handlerRef = React.useRef(handler)
 
-  React.useEffect(() => {
-    handlerRef.current = handler
-  }, [handler])
+  const handlerEvent = React.useEffectEvent(handler)
 
   React.useEffect(() => {
     if (!enabled)
@@ -27,7 +24,7 @@ export function useClickOutside<T extends Element = Element>(
       const isClickAway = refs.every(r => r.current && !r.current.contains(target))
 
       if (isClickAway) {
-        handlerRef.current(event)
+        handlerEvent(event)
       }
     }
 

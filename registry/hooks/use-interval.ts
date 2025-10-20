@@ -6,18 +6,10 @@ export function useInterval(
   callback: () => void,
   delay: number,
 ): void {
-  const savedCallback = React.useRef<() => void>(callback)
+  const callbackEvent = React.useEffectEvent(callback)
 
   React.useEffect(() => {
-    savedCallback.current = callback
-  }, [callback])
-
-  React.useEffect(() => {
-    function tick() {
-      savedCallback.current?.()
-    }
-
-    const id = setInterval(tick, delay)
+    const id = setInterval(callbackEvent, delay)
     return () => clearInterval(id)
   }, [delay])
 }

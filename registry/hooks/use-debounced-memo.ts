@@ -8,7 +8,7 @@ export function useDebouncedMemo<T>(factory: () => T, deps: React.DependencyList
 
   const debouncedSetState = useDebouncedCallback((value: T) => {
     setState(value)
-  }, [setState], delay)
+  }, [], delay)
 
   React.useEffect(() => {
     debouncedSetState(factory())

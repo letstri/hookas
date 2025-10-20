@@ -15,5 +15,10 @@ export function useTimeoutEffect(effect: React.EffectCallback, timeout: number, 
         destroy()
       }
     }
-  }, deps)
+  }, [
+    effect,
+    timeout,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    ...deps,
+  ])
 }

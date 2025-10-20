@@ -4,7 +4,7 @@ import * as React from 'react'
 
 export function useMountedEffect(
   effect: React.EffectCallback,
-  deps?: React.DependencyList,
+  deps: React.DependencyList = [],
 ) {
   const isMounted = React.useRef(false)
 
@@ -13,6 +13,9 @@ export function useMountedEffect(
       return effect()
     }
     isMounted.current = true
+  }, [
+    effect,
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, deps)
+    ...deps,
+  ])
 }

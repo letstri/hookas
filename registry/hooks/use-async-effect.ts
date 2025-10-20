@@ -5,7 +5,7 @@ import * as React from 'react'
 
 export function useAsyncEffect(
   effect: () => Promise<void | (() => Promise<void> | void)>,
-  deps?: DependencyList,
+  deps: DependencyList = [],
 ) {
   const destroyRef = React.useRef<void | (() => Promise<void> | void) | undefined>(undefined)
 
@@ -22,5 +22,9 @@ export function useAsyncEffect(
       if (typeof destroyRef.current === 'function')
         destroyRef.current()
     }
-  }, deps)
+  }, [
+    effect,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    ...deps,
+  ])
 }

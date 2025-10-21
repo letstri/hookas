@@ -6,13 +6,19 @@ import { useDebouncedCallback } from './use-debounced-callback'
 export function useDebouncedMemo<T>(factory: () => T, deps: React.DependencyList, delay: number) {
   const [state, setState] = React.useState<T>(() => factory())
 
+  const factoryEvent = React.useEffectEvent(factory)
+
   const debouncedSetState = useDebouncedCallback((value: T) => {
     setState(value)
   }, [], delay)
 
   React.useEffect(() => {
-    debouncedSetState(factory())
-  }, [...deps, debouncedSetState])
+    debouncedSetState(factoryEvent())
+  }, [
+    debouncedSetState,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    ...deps,
+  ])
 
   return state
 }

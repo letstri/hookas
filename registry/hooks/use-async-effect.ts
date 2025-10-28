@@ -9,8 +9,10 @@ export function useAsyncEffect(
 ) {
   const destroyRef = React.useRef<void | (() => Promise<void> | void) | undefined>(undefined)
 
+  const effectEvent = React.useEffectEvent(effect)
+
   React.useEffect(() => {
-    const e = effect()
+    const e = effectEvent()
 
     async function execute() {
       destroyRef.current = await e
@@ -22,9 +24,6 @@ export function useAsyncEffect(
       if (typeof destroyRef.current === 'function')
         destroyRef.current()
     }
-  }, [
-    effect,
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    ...deps,
-  ])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps)
 }

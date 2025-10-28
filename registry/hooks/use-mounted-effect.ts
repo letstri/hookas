@@ -8,14 +8,13 @@ export function useMountedEffect(
 ) {
   const isMounted = React.useRef(false)
 
+  const effectEvent = React.useEffectEvent(effect)
+
   React.useEffect(() => {
     if (isMounted.current) {
-      return effect()
+      return effectEvent()
     }
     isMounted.current = true
-  }, [
-    effect,
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    ...deps,
-  ])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps)
 }

@@ -1,11 +1,10 @@
 'use client'
 
-import type { DependencyList } from 'react'
 import * as React from 'react'
 
 export function useAsyncEffect(
   effect: () => Promise<void | (() => Promise<void> | void)>,
-  deps: DependencyList = [],
+  deps: React.DependencyList = [],
 ) {
   const destroyRef = React.useRef<void | (() => Promise<void> | void) | undefined>(undefined)
 

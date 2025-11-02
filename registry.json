@@ -383,6 +383,19 @@
           "target": "hookas/use-network.ts"
         }
       ]
+    },
+    {
+      "name": "use-keyboard-event",
+      "type": "registry:hook",
+      "title": "useKeyboardEvent",
+      "description": "A hook to handle keyboard events",
+      "files": [
+        {
+          "path": "registry/hooks/use-keyboard-event.ts",
+          "type": "registry:hook",
+          "target": "hookas/use-keyboard-event.ts"
+        }
+      ]
     }
   ]
 }

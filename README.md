@@ -42,6 +42,7 @@ Find the hook you want to use and copy the link to install the hook into your pr
 - [useElementSize](#useelementsize) - Track element size with ResizeObserver
 - [useWindowSize](#usewindowsize) - Track window size
 - [useMousePosition](#usemouseposition) - Track mouse position
+- [useKeyboardEvent](#usekeyboardevent) - Handle keyboard events
 
 ### Scroll & Viewport
 
@@ -853,4 +854,30 @@ function ScrollInfo() {
 
 ```bash
 npx shadcn@latest add https://hookas.letstri.dev/r/use-scroll-info.json
+```
+
+### useKeyboardEvent
+
+Handle keyboard events.
+
+#### Usage
+
+```tsx
+import { useKeyboardEvent } from '@/hookas/use-keyboard-event'
+
+function KeyboardEvent() {
+  useKeyboardEvent('p', (e) => {
+    console.log(e)
+  })
+
+  useKeyboardEvent(e => e.key === 'p' && (e.metaKey || e.ctrlKey), (e) => {
+    console.log(e)
+  })
+}
+```
+
+#### Install
+
+```bash
+npx shadcn@latest add https://hookas.letstri.dev/r/use-keyboard-event.json
 ```

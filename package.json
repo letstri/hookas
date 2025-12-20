@@ -13,7 +13,7 @@
     "registry:build": "shadcn build"
   },
   "dependencies": {
-    "next": "16.0.7"
+    "next": "16.0.10"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.4.1",
